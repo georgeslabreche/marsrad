@@ -19,9 +19,24 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck
+          extra-packages: any::rcmdcheck, any::covr
           needs: check
 
-      - uses: r-lib/actions/check-r-package@v2
-        with:
-          error-on: 'warning'
+      - name: Check package
+        uses: r-lib/actions/check-r-package@v2
+
+      - name: Test coverage
+        run: |
+          options(crayon.enabled = TRUE)
+          library(covr)
+          coverage <- package_coverage()
+          print(coverage)
+          percent_coverage <- percent_coverage(coverage)
+          cat(sprintf("\nOverall coverage: %.2f%%\n", percent_coverage))
+        shell: Rscript {0}
+
+      - name: Show test failures
+        if: failure()
+        run: |
+          find . -name 'testthat.Rout.fail' -exec cat '{}' \; || true
+        shell: bash
