@@ -29,11 +29,44 @@ jobs:
         run: |
           options(crayon.enabled = TRUE)
           library(covr)
+
+          # Calculate coverage
           coverage <- package_coverage()
           print(coverage)
           percent_coverage <- percent_coverage(coverage)
+
+          # Print to console
           cat(sprintf("\nOverall coverage: %.2f%%\n", percent_coverage))
+
+          # Add to GitHub Actions job summary
+          summary_file <- Sys.getenv("GITHUB_STEP_SUMMARY")
+          cat("## Test Coverage Report\n\n", file = summary_file, append = TRUE)
+          cat(sprintf("**Overall Coverage: %.2f%%**\n\n", percent_coverage), file = summary_file, append = TRUE)
+          cat("### Coverage by File\n\n", file = summary_file, append = TRUE)
+          cat("| File | Coverage |\n", file = summary_file, append = TRUE)
+          cat("|------|----------|\n", file = summary_file, append = TRUE)
+
+          # Get per-file coverage
+          file_cov <- coverage[order(names(coverage))]
+          for (file in names(file_cov)) {
+            file_percent <- attr(file_cov[[file]], "coverage")
+            file_percent <- mean(file_percent > 0) * 100
+            cat(sprintf("| %s | %.1f%% |\n", basename(file), file_percent), file = summary_file, append = TRUE)
+          }
+
+          # Generate HTML report
+          report_dir <- file.path(getwd(), "coverage-report")
+          dir.create(report_dir, showWarnings = FALSE)
+          covr::report(coverage, file = file.path(report_dir, "coverage.html"), browse = FALSE)
+          cat(sprintf("\nHTML coverage report generated in %s\n", report_dir))
         shell: Rscript {0}
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage-report/
 
       - name: Show test failures
         if: failure()
