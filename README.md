@@ -1,7 +1,34 @@
-[![Build Status](https://travis-ci.org/georgeslabreche/mars.svg?branch=master)](https://travis-ci.org/georgeslabreche/mars) [![codecov](https://codecov.io/gh/georgeslabreche/mars/branch/master/graph/badge.svg)](https://codecov.io/gh/georgeslabreche/mars)
+[![R-CMD-check](https://github.com/georgeslabreche/mars/workflows/R-CMD-check/badge.svg)](https://github.com/georgeslabreche/mars/actions)
 
 # Solar Radiation on Mars
-Plotting solar radiation on Mars as a function of the following parameters:
+
+## Overview
+
+An R package for calculating solar irradiance (instantaneous power) and insolation (energy over time) on the Martian surface for both horizontal and inclined surfaces. This package is essential for designing solar power systems for Mars missions and mission planning.
+
+## Key Features
+
+- Calculate solar radiation on horizontal and inclined surfaces
+- Account for Martian atmospheric conditions including dust opacity
+- Support for various surface orientations and slope angles
+- Handle polar day/night conditions
+- Compute optimal tilt angles for photovoltaic arrays
+- Calculate sunrise/sunset times on Mars
+
+## What's Included
+
+The package implements equations for:
+
+- **Global irradiance** - total solar radiation (direct + diffuse + reflected)
+- **Direct beam radiation** - sunlight arriving directly from the sun
+- **Diffuse radiation** - light scattered by atmospheric dust
+- **Albedo reflection** - ground-reflected radiation
+- **Insolation** - integrated solar energy over time
+- **Utility functions** - sunrise/sunset, optimal angles, polar day/night detection
+
+## Parameters
+
+Calculate and plot solar radiation on Mars as a function of the following parameters:
 - Areocentric Longitude (Ls)
 - Planetary Latitude (phi)
 - Solar Time (omega)
@@ -10,7 +37,64 @@ Plotting solar radiation on Mars as a function of the following parameters:
 - Slope Angle (beta)
 - Slope Orientation (gamma)
 
+## Getting Started
+
+### Installation
+
+Install the package from GitHub using devtools:
+
+```r
+# Install devtools if you haven't already
+install.packages("devtools")
+
+# Install the mars package
+devtools::install_github("georgeslabreche/mars")
+```
+
+### Basic Usage
+
+```r
+library(mars)
+
+# Calculate global irradiance on a horizontal surface
+# Example: Mars surface at Viking Lander 1 site during northern summer
+Ls <- 120           # Areocentric longitude (degrees)
+phi <- 22.3         # Latitude (degrees) - VL1 location
+longitude <- 0      # Longitude (degrees)
+Ts <- 12            # Solar time (hours) - noon
+tau <- 0.4          # Atmospheric optical depth
+al <- 0.1           # Albedo
+
+# Global irradiance on horizontal surface (W/m²)
+Gh <- G_h(Ls = Ls, phi = phi, longitude = longitude, Ts = Ts, tau = tau, al = al)
+print(paste("Global irradiance:", round(Gh, 2), "W/m²"))
+
+# Daily insolation on horizontal surface (Wh/m²-day)
+Hh <- H_h(Ls = Ls, phi = phi, tau = tau, al = al)
+print(paste("Daily insolation:", round(Hh, 2), "Wh/m²-day"))
+
+# Calculate for an inclined surface (e.g., tilted solar panel)
+beta <- 30          # Tilt angle (degrees)
+gamma_c <- 0        # Surface azimuth angle (degrees, 0 = facing equator)
+
+# Global irradiance on inclined surface (W/m²)
+Gi <- G_i(Ls = Ls, phi = phi, longitude = longitude, Ts = Ts,
+          tau = tau, al = al, beta = beta, gamma_c = gamma_c)
+print(paste("Inclined surface irradiance:", round(Gi, 2), "W/m²"))
+
+# Find optimal tilt angle for maximum daily insolation
+optimal <- optimal_angle(Ls = Ls, phi = phi, tau = tau, al = al)
+print(paste("Optimal tilt angle:", round(optimal, 2), "degrees"))
+
+# Calculate sunrise and sunset times
+sunrise_time <- sunrise(Ls = Ls, phi = phi)
+sunset_time <- sunset(Ls = Ls, phi = phi)
+print(paste("Sunrise:", round(sunrise_time, 2), "hours"))
+print(paste("Sunset:", round(sunset_time, 2), "hours"))
+```
+
 ## References
+
 Based on the following excellent work:
 
 - [Appelbaum, Joseph & Flood, Dennis. (1989). Solar Radiation on Mars. NASA TM-102299.](https://ntrs.nasa.gov/?R=19890018252) Detailed information on solar radiation characteristics on Mars are necessary for effective design of future planned solar energy systems operating on the surface of Mars. In this paper we present a procedure and solar radiation related data from which the diurnally, hourly and daily variation of the global, direct beam and diffuse insolation on Mars are calculated. The radiation data are based on measured optical depth of the Martian atmosphere derived from images taken of the sun with a special diode on the Viking cameras; and computation based on multiple wavelength and multiple scattering of the solar radiation.
