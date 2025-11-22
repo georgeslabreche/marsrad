@@ -1,13 +1,13 @@
-#df_albedo = load(file="data/albedo.rda")
+# Source: Table I - The albedo function.
+#   Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).
+#   Solar radiation on Mars — Update 1991. Solar Energy. 50. 35-51. 10.1016/0038-092X(93)90006-A:
+#   https://www.researchgate.net/publication/223850868_Solar_radiation_on_Mars-Update_1991
+
 
 #' The albedo function.
 #' 
 #' Calculate the albedo value given geographical location and tau factor.
-#' 
-#' Source: Table I - The albedo function.
-#'   Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).
-#'   Solar radiation on Mars — Update 1991. Solar Energy. 50. 35-51. 10.1016/0038-092X(93)90006-A:
-#'   https://www.researchgate.net/publication/223850868_Solar_radiation_on_Mars-Update_1991
+#' Source: Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).  Solar radiation on Mars — Update 1991.
 #'
 #' @param latitude Planetary latitude [deg], from -90° to +90°
 #' @param longitude Planetary longitude [deg], from -180° to 180°
@@ -16,8 +16,6 @@
 #'
 #' @return Surface albedo value (dimensionless, 0-1)
 #' @export
-#'
-#'
 albedo = function(latitude, longitude, tau, coordinates_rounding=TRUE){
 
   # Check if within boundary.  
@@ -26,7 +24,6 @@ albedo = function(latitude, longitude, tau, coordinates_rounding=TRUE){
     
   }else if(latitude < -90 || latitude > 90){
     stop("Latitude (phi) must be a value between -90° and 90°.")
-    
   }
   
   # Round to a multiple of 10 because the lookup table only has mutiple of tens for longitude and latitude.

@@ -20,10 +20,5 @@ Surface albedo value (dimensionless, 0-1)
 }
 \description{
 Calculate the albedo value given geographical location and tau factor.
-}
-\details{
-Source: Table I - The albedo function.
-  Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).
-  Solar radiation on Mars — Update 1991. Solar Energy. 50. 35-51. 10.1016/0038-092X(93)90006-A:
-  https://www.researchgate.net/publication/223850868_Solar_radiation_on_Mars-Update_1991
+Source: Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).  Solar radiation on Mars — Update 1991.
 }
