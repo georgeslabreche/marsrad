@@ -50,7 +50,16 @@ jobs:
 
           # Get per-file coverage by parsing print output
           cov_output <- capture.output(print(coverage))
+
+          # Debug: show what we captured
+          cat("\n**Debug - Captured output:**\n", file = summary_file, append = TRUE)
+          cat("```\n", file = summary_file, append = TRUE)
+          cat(paste(cov_output, collapse = "\n"), file = summary_file, append = TRUE)
+          cat("\n```\n\n", file = summary_file, append = TRUE)
+
           file_lines <- grep("R/.*\\.R:", cov_output, value = TRUE)
+          cat(sprintf("\n**Debug - Found %d matching lines**\n\n", length(file_lines)), file = summary_file, append = TRUE)
+
           for (line in file_lines) {
             # Split on first colon only
             match <- regexpr(":", line)
