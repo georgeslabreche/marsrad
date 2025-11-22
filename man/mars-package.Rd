@@ -7,21 +7,76 @@
 \title{mars: Mars Solar Radiation}
 \description{
 A set of functions to calculate solar irradiance and insolation on Mars horizontal
-and inclined surfaces. Based on NASA Technical Memorandum 102299, 103623, 105216,
+and inclined surfaces. Based on NASA Technical Memorandums 102299, 103623, 105216,
 106321, and 106700, i.e. the canonical Mars solar radiation papers.
+}
+\details{
+The package provides three types of solar radiation calculations:
+\itemize{
+  \item Instantaneous irradiance (G_* functions) - Power per unit area at a specific moment
+  \item Daily insolation (H_* functions) - Energy per unit area over one Martian sol
+  \item Period insolation (I_* functions) - Energy per unit area over multiple sols
+}
+
+All calculations support both horizontal and inclined surfaces. The package includes
+functions for optimal tilt angle calculation, sunrise/sunset times, and atmospheric
+optical depth modeling.
 }
 \section{Package Information}{
 
 \describe{
   \item{Version}{1.0.0}
   \item{License}{GPL-3}
-  \item{Author}{Georges Labrèche <georges@tanagraspace.com> (ORCID: 0000-0002-2104-8789)}
+  \item{Author}{Georges Labrèche <georges@tanagraspace.com>}
+  \item{Affiliation}{Tanagra Space (\url{https://tanagraspace.com})}
   \item{Depends}{R (>= 2.10)}
 }
 }
 
+\examples{
+# Calculate horizontal irradiance at Viking 1 landing site on Ls 90 (northern summer solstice)
+G_h(ls = 90, lat = 22.48, tau = 0.5)
+
+# Find optimal panel tilt angle for the same location and season
+optimal_angle(lat = 22.48, ls = 90)
+
+# Calculate daily insolation on a horizontal surface
+H_h(ls = 90, lat = 22.48, tau = 0.5)
+
+# Calculate insolation over 30 sols on an inclined surface
+I_i(ls = 90, lat = 22.48, tau = 0.5, dec = 30, i = 25, h1 = 0, h2 = 30)
+}
+\references{
+Appelbaum, J., & Flood, D. J. (1989). Solar Radiation on Mars.
+NASA Technical Memorandum 102299.
+\url{https://ntrs.nasa.gov/citations/19890018252}
+
+Appelbaum, J., & Flood, D. J. (1990). Solar radiation on Mars: Update 1990.
+NASA Technical Memorandum 103623.
+\url{https://ntrs.nasa.gov/citations/19910005804}
+
+Appelbaum, J., & Flood, D. J. (1991). Solar radiation on Mars: Update 1991.
+NASA Technical Memorandum 105216.
+\url{https://ntrs.nasa.gov/citations/19910023732}
+
+Appelbaum, J., Sherman, I., & Landis, G. A. (1993).
+Solar radiation on Mars: Stationary photovoltaic array.
+NASA Technical Memorandum 106321.
+\url{https://ntrs.nasa.gov/citations/19940010257}
+
+Appelbaum, J., Flood, D. J., & Norambuena, M. (1994).
+Solar radiation on Mars: Tracking photovoltaic array.
+NASA Technical Memorandum 106700.
+\url{https://ntrs.nasa.gov/citations/19950004977}
+}
+\seealso{
+Useful functions: \code{\link{G_h}} (horizontal irradiance),
+\code{\link{H_h}} (daily insolation), \code{\link{I_h}} (period insolation),
+\code{\link{optimal_angle}} (optimal tilt angle), \code{\link{f}} (normalized net flux)
+
+GitHub repository: \url{https://github.com/georgeslabreche/mars}
+}
 \author{
 \strong{Maintainer}: Georges Labrèche \email{georges@tanagraspace.com} (\href{https://orcid.org/0000-0002-2104-8789}{ORCID})
 
 }
-\keyword{internal}
