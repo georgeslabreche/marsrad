@@ -42,7 +42,7 @@
 #'
 #' @examples
 #' # Calculate horizontal irradiance at Viking 1 landing site on Ls 90 (northern summer solstice)
-#' G_h(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5)
+#' G_h(Ls = 90, phi = 22.48, longitude = -48, Ts = 12, tau = 0.5)
 #'
 #' # Find optimal panel tilt angle for the same location and season
 #' optimal_angle(Ls = 90, phi = 22.48)
