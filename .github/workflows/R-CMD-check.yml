@@ -49,11 +49,15 @@ jobs:
           cat("|------|----------|\n", file = summary_file, append = TRUE)
 
           # Get per-file coverage
-          file_cov <- tally_coverage(coverage, by = "file")
-          for (i in seq_len(nrow(file_cov))) {
-            file_name <- basename(as.character(file_cov$filename[i]))
-            file_percent <- file_cov$value[i]
-            cat(sprintf("| %s | %.2f%% |\n", file_name, file_percent), file = summary_file, append = TRUE)
+          files <- unique(sapply(coverage, function(x) getSrcFilename(x, full.names = FALSE)))
+          files <- sort(files)
+          for (file in files) {
+            file_cov <- coverage[sapply(coverage, function(x) getSrcFilename(x, full.names = FALSE) == file)]
+            if (length(file_cov) > 0) {
+              cov_values <- sapply(file_cov, function(x) attr(x, "coverage"))
+              file_percent <- sum(cov_values > 0) / length(cov_values) * 100
+              cat(sprintf("| %s | %.2f%% |\n", file, file_percent), file = summary_file, append = TRUE)
+            }
           }
 
           # Generate HTML report
