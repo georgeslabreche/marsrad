@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "georges@tanagraspace.com",
            comment = structure("0000-0002-2104-8789", .Names = "ORCID"))
-Description: A set of functions to calculate solar irradiance and insolation on Mars horizontal and inclined surfaces.
+Description: A set of functions to calculate solar irradiance and insolation on Mars horizontal and inclined surfaces. Based on NASA Technical Memorandum 102299 / 103623 / 105216 / 106321 / 106700, i.e. the canonical Mars solar radiation papers.
 License: GNU General Public License (GPL)
 Encoding: UTF-8
 LazyData: true
