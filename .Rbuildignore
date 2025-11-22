@@ -1,3 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
- ^data-raw$
+^data-raw$
+^\.github$
+^Dockerfile-docs$
+^docs$
+^LICENSE$

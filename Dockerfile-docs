@@ -30,5 +30,5 @@ WORKDIR /pkg
 COPY . /pkg/
 
 # Generate the PDF documentation from man/ directory only
-CMD R CMD Rd2pdf --no-preview --title="Mars Package Reference Manual" /pkg/man --output=/output/mars-manual.pdf && \
+CMD R CMD Rd2pdf --no-preview --title="Mars Solar Radiation Package Reference Manual" /pkg/man --output=/output/mars-manual.pdf && \
     echo "PDF generated successfully at /output/mars-manual.pdf"

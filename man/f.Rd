@@ -25,17 +25,19 @@ presented in Appelbaum & Flood (1990). Can use polynomial expression or lookup t
 
 The function behavior can be configured via environment variables:
 
-**NET_FLUX_FUNCTION_TYPE**: Controls which implementation to use:
-- `"polynomial"` (default) - Analytical polynomial expression with ~0.7% mean error.
-  Maximum error ~7% at zenith angles 80-85° and tau > 5.
-- `"lookup_v1"` - Lookup table from NASA TM-102299. Albedo fixed at 0.1.
-- `"lookup_v2"` - Lookup table from NASA TM-103623. Supports albedo 0.1 and 0.4.
+\strong{NET_FLUX_FUNCTION_TYPE}: Controls which implementation to use:
+\itemize{
+  \item \code{"polynomial"} (default) - Analytical polynomial expression with ~0.7\% mean error.
+        Maximum error ~7\% at zenith angles 80-85° and tau > 5.
+  \item \code{"lookup_v1"} - Lookup table from NASA TM-102299. Albedo fixed at 0.1.
+  \item \code{"lookup_v2"} - Lookup table from NASA TM-103623. Supports albedo 0.1 and 0.4.
+}
 
-Set with: `Sys.setenv(NET_FLUX_FUNCTION_TYPE = "polynomial")`
+Set with: \code{Sys.setenv(NET_FLUX_FUNCTION_TYPE = "polynomial")}
 
-**NET_FLUX_FUNCTION_SHOW_WARNINGS**: Controls warning display (TRUE/FALSE, default: TRUE).
+\strong{NET_FLUX_FUNCTION_SHOW_WARNINGS}: Controls warning display (TRUE/FALSE, default: TRUE).
 Warnings are shown when polynomial calculations may have notable error margin (tau > 5 or z >= 80°).
 
-Set with: `Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)`
+Set with: \code{Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)}
 }
 

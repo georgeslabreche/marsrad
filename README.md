@@ -1,10 +1,10 @@
 [![R-CMD-check](https://github.com/georgeslabreche/mars/workflows/R-CMD-check/badge.svg)](https://github.com/georgeslabreche/mars/actions)
 
-# Solar Radiation on Mars
+# Mars Solar Radiation
 
 ## Overview
 
-An R package to calculate solar irradiance (instantaneous power) and insolation (energy over time) on the Martian surface for both horizontal and inclined surfaces. This package is essential in designing solar power systems for Mars missions and mission planning. Based on NASA Technical Memorandum 102299 / 103623 / 105216 / 106321 / 106700, i.e. the canonical Mars solar radiation papers.
+An R package to calculate solar irradiance (instantaneous power) and insolation (energy over time) on the Martian surface for both horizontal and inclined surfaces. This package is essential in designing solar power systems for Mars missions and mission planning. Based on NASA Technical Memorandum 102299, 103623, 105216, 106321, and 106700, i.e. the canonical Mars solar radiation papers.
 
 ## Citation
 
