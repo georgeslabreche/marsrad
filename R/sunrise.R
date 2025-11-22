@@ -1,9 +1,8 @@
 # (30) in (1993).
-# FIXME: 
+# FIXME:
 #   1. For surface oriented towards the equator, gamma_c = 0 or 180/-180
 #   2. For vertical surface (when Beta=90)
-#   3. Not exactly what is in (21) to determine omega_rad. 
-# TODO: Make this a hidden function.
+#   3. Not exactly what is in (21) to determine omega_rad.
 
 #' Sunrise for inclined surface oriented toward equator
 #'
@@ -15,7 +14,7 @@
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunrise hour angle [rad]
-#' @export
+#' @keywords internal
 sunrise_for_inclined_surface_oriented_equator = function(phi, beta, delta){
   
   # (8) in (1993).
@@ -35,7 +34,7 @@ sunrise_for_inclined_surface_oriented_equator = function(phi, beta, delta){
 
 # (15) from (1993).
 # Angles in rad.
-# TODO: Make this a hidden function.
+
 #' Sunrise for inclined surface oriented eastward
 #'
 #' Calculates sunrise hour angle for an inclined surface facing east.
@@ -47,7 +46,7 @@ sunrise_for_inclined_surface_oriented_equator = function(phi, beta, delta){
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunrise hour angle [rad], or NA if sun never rises on this surface
-#' @export
+#' @keywords internal
 sunrise_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta){
   
   # Calculate omega for horizontal surface.
@@ -80,7 +79,7 @@ sunrise_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta)
 
 # (17) from (1993).
 # Angles in rad.
-# TODO: Make this a hidden function.
+
 #' Sunrise for inclined surface oriented westward
 #'
 #' Calculates sunrise hour angle for an inclined surface facing west.
@@ -92,7 +91,7 @@ sunrise_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta)
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunrise hour angle [rad], or NA if sun never rises on this surface
-#' @export
+#' @keywords internal
 sunrise_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta){
   
   # Calculate omega for horizontal surface.
@@ -123,7 +122,7 @@ sunrise_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta)
 }
 
 # Angles in rad.
-# TODO: Make this a hidden function.
+
 #' Sunrise for horizontal surface
 #'
 #' Calculates sunrise hour angle for a horizontal surface.
@@ -133,7 +132,7 @@ sunrise_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta)
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunrise hour angle [rad]
-#' @export
+#' @keywords internal
 sunrise_for_horizontal_surface = function(phi, delta){
   
   # Equation 8 (1993): Sunrise hour angle [rad].
@@ -143,7 +142,7 @@ sunrise_for_horizontal_surface = function(phi, delta){
 }
 
 # Angles in rad.
-# TODO: Make this a hidden function.
+
 #' Sunrise for inclined surface (general)
 #'
 #' Calculates sunrise hour angle for an inclined surface with any orientation.
@@ -155,7 +154,7 @@ sunrise_for_horizontal_surface = function(phi, delta){
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunrise hour angle [rad]
-#' @export
+#' @keywords internal
 sunrise_for_inclined_surface = function(phi, beta, gamma_c, delta){
   
   # Inclination angle is 0 degrees, this is equivalent to a horizontal surface.

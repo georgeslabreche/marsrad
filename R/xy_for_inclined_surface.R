@@ -1,5 +1,4 @@
 # From (1993): (19) for inclined and (25) for vertical surface.
-# TODO: Make this a hidden function.
 
 #' X parameter for inclined surface sunrise/sunset calculations
 #'
@@ -11,6 +10,7 @@
 #' @param gamma_c Surface azimuth angle [rad]
 #'
 #' @return X parameter (dimensionless)
+#' @keywords internal
 x_for_inclined_surface = function(phi, beta, gamma_c){
   
   # FIXME: For vertical surface, i.e. beta = 90. Need gamma_s?!?!
@@ -25,7 +25,6 @@ x_for_inclined_surface = function(phi, beta, gamma_c){
 
 
 # From (1993): (20) for inclined and (26) for vertical surface.
-# TODO: Make this a hidden function.
 
 #' Y parameter for inclined surface sunrise/sunset calculations
 #'
@@ -38,6 +37,7 @@ x_for_inclined_surface = function(phi, beta, gamma_c){
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Y parameter (dimensionless)
+#' @keywords internal
 y_for_inclined_surface = function(phi, beta, gamma_c, delta){
   
   # a is zero for a vertical surface, i.e. beta = 90 deg. See (26) from (1993)
