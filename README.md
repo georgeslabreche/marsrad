@@ -93,6 +93,27 @@ print(paste("Sunrise:", round(sunrise_time, 2), "hours"))
 print(paste("Sunset:", round(sunset_time, 2), "hours"))
 ```
 
+## Development
+
+### Running Tests
+
+To run the package tests during development:
+
+```r
+# Install devtools if you haven't already
+install.packages("devtools")
+
+# Option 1: Run tests only (faster for quick testing)
+devtools::test()
+
+# Option 2: Run a full package check (includes tests, documentation, examples)
+devtools::check()
+```
+
+**`devtools::test()`** is recommended for quick iteration during development - it loads your package and runs all tests without requiring installation.
+
+**`devtools::check()`** performs a comprehensive package check including tests, documentation, examples, and package structure validation - use this before submitting to CRAN or creating releases.
+
 ## References
 
 Based on the following excellent work:

@@ -5,8 +5,8 @@ Authors@R:
     person(given = "Georges",
            family = "Labreche",
            role = c("aut", "cre"),
-           email = "georges@opendatakosovo.org",
-           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
+           email = "georges@tanagraspace.com",
+           comment = structure("0000-0002-2104-8789", .Names = "ORCID"))
 Description: A set of functions to calculate solar irradiance and insolation on Mars horizontal and inclined surfaces.
 License: What license it uses
 Encoding: UTF-8
