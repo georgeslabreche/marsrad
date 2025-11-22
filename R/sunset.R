@@ -9,7 +9,7 @@
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunset hour angle [rad]
-#' @export
+#' @noRd
 sunset_for_horizontal_surface = function(phi, delta){
 
   # (9) in (1993): Sunset hour angle [rad].
@@ -31,7 +31,7 @@ sunset_for_horizontal_surface = function(phi, delta){
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunset hour angle [rad]
-#' @keywords internal
+#' @noRd
 sunset_for_inclined_surface_oriented_equator = function(phi, beta, delta){
 
   # (9) in (1993).
@@ -62,7 +62,7 @@ sunset_for_inclined_surface_oriented_equator = function(phi, beta, delta){
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunset hour angle [rad], or NA if sun never sets on this surface
-#' @keywords internal
+#' @noRd
 sunset_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta){
 
   omega_rad_1 = sunset_for_horizontal_surface(phi=phi, delta=delta)
@@ -102,7 +102,7 @@ sunset_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta){
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunset hour angle [rad], or NA if sun never sets on this surface
-#' @keywords internal
+#' @noRd
 sunset_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta){
 
   omega_rad_1 = sunset_for_horizontal_surface(phi=phi, delta=delta)
@@ -140,7 +140,7 @@ sunset_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta){
 #' @param delta Solar declination angle [rad]
 #'
 #' @return Sunset hour angle [rad]
-#' @keywords internal
+#' @noRd
 sunset_for_inclined_surface = function(phi, beta, gamma_c, delta){
 
   # Inclination angle is 0 degrees, this is equivalent to a horizontal surface.

@@ -15,7 +15,7 @@
 #' @param gamma_c Surface azimuth angle [deg]. Optional, for inclined surfaces
 #'
 #' @return List with Ts_start and Ts_end constrained to daylight hours, or NULL if no daylight
-#' @export
+#' @noRd
 constrain_solar_time_range = function(Ls, phi, Ts_start, Ts_end, beta=NULL, gamma_c=NULL){
   
   if(Ts_start >= Ts_end){

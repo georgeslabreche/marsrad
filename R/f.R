@@ -6,6 +6,7 @@ Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)
 #' If NET_FLUX_FUNCTION_TYPE has not been set then default to 'polynomial'.
 #'
 #' @return Character string: 'lookup_v1', 'lookup_v2', or 'polynomial'
+#' @noRd
 get_net_flux_function_type = function(){
   net_flux_function_type = ifelse(Sys.getenv("NET_FLUX_FUNCTION_TYPE") == "", "polynomial", Sys.getenv("NET_FLUX_FUNCTION_TYPE"))
   return(net_flux_function_type)
@@ -16,6 +17,7 @@ get_net_flux_function_type = function(){
 #' warnings should be thrown for polynomial calculations that have notable error margin.
 #'
 #' @return Logical TRUE or FALSE
+#' @noRd
 show_net_flux_function_warnings = function(){
   
   net_flux_function_type = ifelse(Sys.getenv("NET_FLUX_FUNCTION_SHOW_WARNINGS") == "", "true", Sys.getenv("NET_FLUX_FUNCTION_SHOW_WARNINGS"))
@@ -37,7 +39,7 @@ show_net_flux_function_warnings = function(){
 #' Only works when NET_FLUX_FUNCTION_TYPE is set to 'lookup_v1' or 'lookup_v2'.
 #'
 #' @return Numeric vector of available tau values
-#' @export
+#' @noRd
 f_lookup_taus = function(){
   
   net_flux_function_type = get_net_flux_function_type()
@@ -59,7 +61,7 @@ f_lookup_taus = function(){
 #' Only works when NET_FLUX_FUNCTION_TYPE is set to 'lookup_v1' or 'lookup_v2'.
 #'
 #' @return Numeric vector of available zenith angle values [deg]
-#' @export
+#' @noRd
 f_lookup_Zs = function(){
   
   net_flux_function_type = get_net_flux_function_type()
@@ -85,6 +87,7 @@ f_lookup_Zs = function(){
 #' @param k Albedo exponent (0 or 1)
 #'
 #' @return Polynomial coefficient value
+#' @noRd
 p = function(i, j, k){
   
   if(k==0){
@@ -103,14 +106,15 @@ p = function(i, j, k){
 #' The net solar flux integrated over the solar spectrum on the Martian
 #' surface was calculated by Pollack based on multiple wavelength and
 #' multiple scattering of the solar radiation.
-#' 
-#' Source: Table III in Appelbaum, Joseph & Flood, Dennis. (1990). 
+#'
+#' Source: Table III in Appelbaum, Joseph & Flood, Dennis. (1990).
 #'
 #' @param z Zenith angle [deg].
 #' @param tau Optical depth.
 #' @param al Albedo, can only be 0.1.
 #'
 #' @return Normalized net flux.
+#' @noRd
 f_lookup_v1 = function(z, tau, al=0.1){
   
   if(al != 0.1){
@@ -126,16 +130,17 @@ f_lookup_v1 = function(z, tau, al=0.1){
 }
 
 #' The normalized net flux function's lookup table lookup.
-#' 
+#'
 #' Source: Solar radiation on Mars: Update 1990.
 #'  Table III (a) and (b) for an albedo of 0.1.
 #'  Table IV  (a) and (b) for an albedo of 0.4.
-#'  
+#'
 #' @param z Zenith angle [deg].
 #' @param tau Optical depth.
 #' @param al Albedo, can be 0.1 or 0.4.
 #'
 #' @return Normalized net flux.
+#' @noRd
 f_lookup_v2 = function(z, tau, al=0.1){
   
   nnff_df = NULL
@@ -160,18 +165,19 @@ f_lookup_v2 = function(z, tau, al=0.1){
 
 
 #' The analytical expression of the normalized net flux function.
-#' 
+#'
 #' The mean error is about 0.7 percent for the full range. For zenith angles up to 40° the error is much smaller.
 #' The largest error is for zenith angle of 80° and 85° and for tau greater than 5. The maximum error is about 7 percent.
 #' At these large angles and opacities, the error has a minor effect on the calculated daily insolations.
 #'
 #' Source: Equation 20? in Appelbaum, Joseph & Flood, Dennis (1990) - Update 1990.
-#' 
+#'
 #' @param z Zenith angle [deg].
 #' @param tau Optical depth.
 #' @param al Albedo.
 #'
 #' @return Normalized net flux.
+#' @noRd
 f_analytical = function(z, tau, al=0.1){
   
   # Check for and warn against parameters that would result in lagest errors (max. 7%).
