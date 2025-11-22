@@ -49,10 +49,17 @@ jobs:
           cat("|------|----------|\n", file = summary_file, append = TRUE)
 
           # Get per-file coverage
-          files <- unique(sapply(coverage, function(x) getSrcFilename(x, full.names = FALSE)))
+          files <- unique(sapply(coverage, function(x) {
+            src <- getSrcFilename(x, full.names = FALSE)
+            if (is.null(src)) "" else as.character(src)
+          }))
+          files <- files[files != ""]
           files <- sort(files)
           for (file in files) {
-            file_cov <- coverage[sapply(coverage, function(x) getSrcFilename(x, full.names = FALSE) == file)]
+            file_cov <- coverage[sapply(coverage, function(x) {
+              src <- getSrcFilename(x, full.names = FALSE)
+              !is.null(src) && as.character(src) == file
+            })]
             if (length(file_cov) > 0) {
               cov_values <- sapply(file_cov, function(x) attr(x, "coverage"))
               file_percent <- sum(cov_values > 0) / length(cov_values) * 100
