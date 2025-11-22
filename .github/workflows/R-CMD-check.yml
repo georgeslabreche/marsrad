@@ -9,6 +9,8 @@ on:
 jobs:
   R-CMD-check:
     runs-on: ubuntu-latest
+    env:
+      NET_FLUX_FUNCTION_SHOW_WARNINGS: FALSE
 
     steps:
       - uses: actions/checkout@v4
