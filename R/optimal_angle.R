@@ -1,5 +1,3 @@
-Sys.setenv(TAU_FACTOR_THRESHOLD_CLEAR_DAY = 0.5)
-
 #' Optimal tilt angle for maximum daily insolation
 #'
 #' Calculates the optimal surface tilt angle (beta) that maximizes daily solar energy collection

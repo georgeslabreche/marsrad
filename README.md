@@ -167,18 +167,6 @@ Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)
 Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = FALSE)
 ```
 
-### TAU_FACTOR_THRESHOLD_CLEAR_DAY
-
-Threshold for atmospheric optical depth to classify a day as "clear". Used internally by optimal angle calculations.
-
-**Default:** `0.5`
-
-**Usage:**
-```r
-# Set clear day threshold
-Sys.setenv(TAU_FACTOR_THRESHOLD_CLEAR_DAY = 0.5)
-```
-
 ## Development
 
 ### Running Tests
