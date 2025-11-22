@@ -4,7 +4,26 @@
 
 ## Overview
 
-An R package for calculating solar irradiance (instantaneous power) and insolation (energy over time) on the Martian surface for both horizontal and inclined surfaces. This package is essential for designing solar power systems for Mars missions and mission planning.
+An R package to calculate solar irradiance (instantaneous power) and insolation (energy over time) on the Martian surface for both horizontal and inclined surfaces. This package is essential in designing solar power systems for Mars missions and mission planning. Based on NASA Technical Memorandum 102299 / 103623 / 105216 / 106321 / 106700, i.e. the canonical Mars solar radiation papers.
+
+## Citation
+
+If you use this package in your research or publication, please cite the paper it was developed for:
+
+**Labrèche, Georges and Cordes, Florian.** "[Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism](https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf)." *15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)*, October 2020.
+
+### BibTeX
+
+```bibtex
+@inproceedings{labreche2020rover,
+  title={Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism},
+  author={Labr{\`e}che, Georges and Cordes, Florian},
+  booktitle={15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)},
+  month={October},
+  year={2020},
+  url={https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf}
+}
+```
 
 ## Key Features
 
@@ -113,6 +132,46 @@ devtools::check()
 **`devtools::test()`** is recommended for quick iteration during development - it loads your package and runs all tests without requiring installation.
 
 **`devtools::check()`** performs a comprehensive package check including tests, documentation, examples, and package structure validation - use this before submitting to CRAN or creating releases.
+
+### Generating Documentation
+
+#### Generating man/ Files
+
+The `man/` directory contains R documentation files (.Rd) generated from roxygen2 comments in the source code. To regenerate these files after modifying function documentation:
+
+```r
+# Install roxygen2
+install.packages("roxygen2")
+
+# Generate documentation
+roxygen2::roxygenize()
+```
+
+This updates all `.Rd` files in the `man/` directory based on the `#'` roxygen2 comments in R source files.
+
+#### Generating PDF Reference Manual
+
+The package reference manual is a comprehensive PDF containing documentation for all exported functions.
+
+For Apple Silicon Macs (M1/M2/M3):
+```bash
+# Build the Docker image (first time only, from repository root)
+docker build --platform linux/amd64 -t mars-docs -f Dockerfile-docs .
+
+# Generate the PDF
+docker run --rm --platform linux/amd64 -v $(pwd)/docs:/output mars-docs
+```
+
+For Intel Macs and Linux:
+```bash
+# Build the Docker image (first time only, from repository root)
+docker build -t mars-docs -f Dockerfile-docs .
+
+# Generate the PDF
+docker run --rm -v $(pwd)/docs:/output mars-docs
+```
+
+The PDF will be created at `docs/mars-manual.pdf`.
 
 ## References
 

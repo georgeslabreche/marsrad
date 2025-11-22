@@ -2,5 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-# Generated documentation PDFs
-docs/*.pdf
+
+# Generated documentation
+docs/mars-manual.pdf
