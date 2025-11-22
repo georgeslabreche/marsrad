@@ -37,8 +37,18 @@ optical depth modeling.
 
 If you use this package in your research or publication, please cite the paper it was developed for:
 
-Labrèche, G., & Cordes, F. (2020). \href{https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf}{Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism}.
+Labrèche, G., & Cordes, F. (2020). Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism.
 \emph{15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)}.
+\url{https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf}
+}
+
+\section{Links}{
+
+\describe{
+  \item{Project's GitHub repository}{\url{https://github.com/georgeslabreche/mars}}
+  \item{Author's LinkedIn}{\url{https://www.linkedin.com/in/georgeslabreche/}}
+  \item{Author's website}{\url{https://georges.fyi}}
+}
 }
 
 \examples{
@@ -53,6 +63,7 @@ H_h(ls = 90, lat = 22.48, tau = 0.5)
 
 # Calculate insolation over 30 sols on an inclined surface
 I_i(ls = 90, lat = 22.48, tau = 0.5, dec = 30, i = 25, h1 = 0, h2 = 30)
+
 }
 \references{
 Appelbaum, J., & Flood, D. J. (1989). Solar Radiation on Mars.
@@ -78,13 +89,10 @@ NASA Technical Memorandum 106700.
 \url{https://ntrs.nasa.gov/citations/19950004977}
 }
 \seealso{
-Useful functions: \code{\link{G_h}} (horizontal irradiance),
-\code{\link{H_h}} (daily insolation), \code{\link{I_h}} (period insolation),
-\code{\link{optimal_angle}} (optimal tilt angle), \code{\link{f}} (normalized net flux)
-
-Project's GitHub repository: \url{https://github.com/georgeslabreche/mars}
-Author's LinkedIn: \url{https://www.linkedin.com/in/georgeslabreche/}
-Author's website: \url{https://georges.fyi}
+Labrèche, G. (2020). Exploiting the SherpaTT Rover Active Suspension System to Enable
+Optimal Solar Array Inclination and Orientation for Long Traverses in a Martian Environment.
+\emph{Master's Thesis, Luleå University of Technology}.
+\url{https://www.diva-portal.org/smash/record.jsf?pid=diva2:1413245}
 }
 \author{
 \strong{Maintainer}: Georges Labrèche \email{georges@tanagraspace.com} (\href{https://orcid.org/0000-0002-2104-8789}{ORCID})

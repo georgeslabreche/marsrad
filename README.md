@@ -10,7 +10,7 @@ An R package to calculate solar irradiance (instantaneous power) and insolation 
 
 If you use this package in your research or publication, please cite the paper it was developed for:
 
-**Labrèche, Georges and Cordes, Florian.** "[Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism](https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf)." *15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)*, October 2020.
+**Labrèche, Georges and Cordes, Florian.** (2020). "[Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism](https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf)." *15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)*, October 2020.
 
 ### BibTeX
 
@@ -24,6 +24,10 @@ If you use this package in your research or publication, please cite the paper i
   url={https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf}
 }
 ```
+
+## See Also
+
+**Labrèche, G**. (2020). [Exploiting the SherpaTT Rover Active Suspension System to Enable Optimal Solar Array Inclination and Orientation for Long Traverses in a Martian Environment](https://www.diva-portal.org/smash/record.jsf?pid=diva2:1413245). *Master's Thesis, Luleå University of Technology*, March 2020. https://www.diva-portal.org/smash/record.jsf?pid=diva2:1413245
 
 ## Key Features
 

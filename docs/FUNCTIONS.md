@@ -38,11 +38,11 @@ This document provides a quick reference for all exported functions in the mars 
 | `is_irradiated()` | Check if surface is receiving solar irradiance |
 | `is_polar_day()` | Check if location is experiencing polar day |
 | `is_polar_night()` | Check if location is experiencing polar night |
-| `optical_depth()` | Calculate atmospheric optical depth on Mars |
+| `optical_depth()` | Calculate atmospheric optical depth |
 | `optimal_angle()` | Calculate optimal tilt angle for maximum daily insolation |
-| `sunrise()` | Calculate sunrise time on Mars |
-| `sunset()` | Calculate sunset time on Mars |
-| `T_d()` | Calculate number of Mars daylight hours |
+| `sunrise()` | Calculate sunrise time |
+| `sunset()` | Calculate sunset time |
+| `T_d()` | Calculate number of daylight hours |
 | `Z()` | Calculate solar zenith angle |
 
 ## Function Categories
