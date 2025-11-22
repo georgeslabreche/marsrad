@@ -8,9 +8,9 @@
 #' @details
 #' The package provides three types of solar radiation calculations:
 #' \itemize{
-#'   \item Instantaneous irradiance (G_* functions) - Power per unit area at a specific moment
-#'   \item Daily insolation (H_* functions) - Energy per unit area over one Martian sol
-#'   \item Period insolation (I_* functions) - Energy per unit area over multiple sols
+#'   \item Instantaneous irradiance (G_* functions) — Power per unit area at a specific moment
+#'   \item Daily insolation (H_* functions) — Energy per unit area over one Martian sol
+#'   \item Period insolation (I_* functions) — Energy per unit area over multiple sols
 #' }
 #'
 #' All calculations support both horizontal and inclined surfaces. The package includes
@@ -21,10 +21,16 @@
 #' \describe{
 #'   \item{Version}{1.0.0}
 #'   \item{License}{GPL-3}
-#'   \item{Author}{Georges Labrèche <georges@tanagraspace.com>}
-#'   \item{Affiliation}{Tanagra Space (\url{https://tanagraspace.com})}
+#'   \item{Author}{\href{https://georges.fyi}{Georges Labrèche}}
+#'   \item{Affiliation}{\href{https://tanagraspace.com}{Tanagra Space}}
 #'   \item{Depends}{R (>= 2.10)}
 #' }
+#'
+#' @section Citation:
+#' If you use this package in your research or publication, please cite the paper it was developed for:
+#'
+#' Labrèche, G., & Cordes, F. (2020). \href{https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf}{Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism}.
+#' \emph{15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)}.
 #'
 #' @references
 #' Appelbaum, J., & Flood, D. J. (1989). Solar Radiation on Mars.
@@ -54,7 +60,9 @@
 #' \code{\link{H_h}} (daily insolation), \code{\link{I_h}} (period insolation),
 #' \code{\link{optimal_angle}} (optimal tilt angle), \code{\link{f}} (normalized net flux)
 #'
-#' GitHub repository: \url{https://github.com/georgeslabreche/mars}
+#' Project's GitHub repository: \url{https://github.com/georgeslabreche/mars}
+#' Author's LinkedIn: \url{https://www.linkedin.com/in/georgeslabreche/}
+#' Author's website: \url{https://georges.fyi}
 #'
 #' @examples
 #' # Calculate horizontal irradiance at Viking 1 landing site on Ls 90 (northern summer solstice)

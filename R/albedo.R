@@ -9,8 +9,8 @@
 #' Calculate the albedo value given geographical location and tau factor.
 #' Source: Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).  Solar radiation on Mars — Update 1991.
 #'
-#' @param latitude Planetary latitude [deg], from -90° to +90°
-#' @param longitude Planetary longitude [deg], from -180° to 180°
+#' @param latitude Planetary latitude [deg], from -90\u00b0 to +90\u00b0
+#' @param longitude Planetary longitude [deg], from -180\u00b0 to 180\u00b0
 #' @param tau Atmospheric optical depth (dimensionless)
 #' @param coordinates_rounding Logical, whether to round coordinates to nearest grid point
 #'
@@ -20,10 +20,10 @@ albedo = function(latitude, longitude, tau, coordinates_rounding=TRUE){
 
   # Check if within boundary.  
   if(longitude < -180 || longitude > 180){
-    stop("Longitude must be a value between -180° and 180°.")
+    stop("Longitude must be a value between -180\u00b0 and 180\u00b0.")
     
   }else if(latitude < -90 || latitude > 90){
-    stop("Latitude (phi) must be a value between -90° and 90°.")
+    stop("Latitude (phi) must be a value between -90\u00b0 and 90\u00b0.")
   }
   
   # Round to a multiple of 10 because the lookup table only has mutiple of tens for longitude and latitude.

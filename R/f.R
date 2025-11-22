@@ -166,8 +166,8 @@ f_lookup_v2 = function(z, tau, al=0.1){
 
 #' The analytical expression of the normalized net flux function.
 #'
-#' The mean error is about 0.7 percent for the full range. For zenith angles up to 40° the error is much smaller.
-#' The largest error is for zenith angle of 80° and 85° and for tau greater than 5. The maximum error is about 7 percent.
+#' The mean error is about 0.7 percent for the full range. For zenith angles up to 40\u00b0 the error is much smaller.
+#' The largest error is for zenith angle of 80\u00b0 and 85\u00b0 and for tau greater than 5. The maximum error is about 7 percent.
 #' At these large angles and opacities, the error has a minor effect on the calculated daily insolations.
 #'
 #' Source: Equation 20? in Appelbaum, Joseph & Flood, Dennis (1990) - Update 1990.
@@ -191,7 +191,7 @@ f_analytical = function(z, tau, al=0.1){
   if(isTRUE(show_net_flux_function_warnings())){
     # Use ifelse in case this function is being invoked from an integration in which case Z can be a vector instead of a scalar.
     # If Z is a scalar and we use if() then the following issue will occur: "the condition has length > 1 and only the first element will be used."
-    warning_msg = ifelse(z >= 80, paste("Possibly large error encountered with z = ", z, "° (maximum error is 7% for Z = 80° or Z = 85°). ",
+    warning_msg = ifelse(z >= 80, paste("Possibly large error encountered with z = ", z, "\u00b0 (maximum error is 7% for Z = 80\u00b0 or Z = 85\u00b0). ",
                                         "Consider using the lookup_v1 and lookup_v2 table lookup implementation of the normalized net flux function instead of its polynomial expression.\n",
                                         sep=""), "")
     
@@ -233,7 +233,7 @@ f_analytical = function(z, tau, al=0.1){
 #' \strong{NET_FLUX_FUNCTION_TYPE}: Controls which implementation to use:
 #' \itemize{
 #'   \item \code{"polynomial"} (default) - Analytical polynomial expression with ~0.7\% mean error.
-#'         Maximum error ~7\% at zenith angles 80-85° and tau > 5.
+#'         Maximum error ~7\% at zenith angles 80-85\u00b0 and tau > 5.
 #'   \item \code{"lookup_v1"} - Lookup table from NASA TM-102299. Albedo fixed at 0.1.
 #'   \item \code{"lookup_v2"} - Lookup table from NASA TM-103623. Supports albedo 0.1 and 0.4.
 #' }
@@ -241,7 +241,7 @@ f_analytical = function(z, tau, al=0.1){
 #' Set with: \code{Sys.setenv(NET_FLUX_FUNCTION_TYPE = "polynomial")}
 #'
 #' \strong{NET_FLUX_FUNCTION_SHOW_WARNINGS}: Controls warning display (TRUE/FALSE, default: TRUE).
-#' Warnings are shown when polynomial calculations may have notable error margin (tau > 5 or z >= 80°).
+#' Warnings are shown when polynomial calculations may have notable error margin (tau > 5 or z >= 80\u00b0).
 #'
 #' Set with: \code{Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)}
 #'
@@ -266,7 +266,7 @@ f = function(z, tau, al=0.1){
   
   # Check if given Z results in NULL net flux.
   if(is.null(net_flux)){
-    stop(paste("Sun zenith angle z = ", z ,"° is not available in the net flux lookup table. Consider using the polynomial function instead.", sep=""))
+    stop(paste("Sun zenith angle z = ", z ,"\u00b0 is not available in the net flux lookup table. Consider using the polynomial function instead.", sep=""))
     
   }
   

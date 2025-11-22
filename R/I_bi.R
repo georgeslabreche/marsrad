@@ -16,7 +16,7 @@
 I_bi = function(Ls, phi, tau, Ts_start, Ts_end, beta, gamma_c){
   
   if(gamma_c > 180 || gamma_c < -180){
-    stop("Surface azimuth angle gamma_c must between -180° and +180° with zero south, east negative, and west positive.")
+    stop("Surface azimuth angle gamma_c must between -180\u00b0 and +180\u00b0 with zero south, east negative, and west positive.")
   }
   
   # Step 1: Constrain Ts_start and Ts_end based on sunrise and sunset times.
