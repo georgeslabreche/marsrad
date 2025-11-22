@@ -1,6 +1,6 @@
 Package: mars
 Title: Mars Solar Radiation
-Version: 0.26
+Version: 1.0.0
 Authors@R: 
     person(given = "Georges",
            family = "Labreche",
