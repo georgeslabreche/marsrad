@@ -9,7 +9,7 @@
 #' \describe{
 #'   \item{Version}{1.0.0}
 #'   \item{License}{GPL-3}
-#'   \item{Author}{Georges Labreche <georges@tanagraspace.com> (ORCID: 0000-0002-2104-8789)}
+#'   \item{Author}{Georges Labrèche <georges@tanagraspace.com> (ORCID: 0000-0002-2104-8789)}
 #'   \item{Depends}{R (>= 2.10)}
 #' }
 #'
