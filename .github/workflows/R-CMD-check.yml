@@ -48,22 +48,15 @@ jobs:
           cat("| File | Coverage |\n", file = summary_file, append = TRUE)
           cat("|------|----------|\n", file = summary_file, append = TRUE)
 
-          # Get per-file coverage
-          files <- unique(sapply(coverage, function(x) {
-            src <- getSrcFilename(x, full.names = FALSE)
-            if (is.null(src)) "" else as.character(src)
-          }))
-          files <- files[files != ""]
-          files <- sort(files)
-          for (file in files) {
-            file_cov <- coverage[sapply(coverage, function(x) {
-              src <- getSrcFilename(x, full.names = FALSE)
-              !is.null(src) && as.character(src) == file
-            })]
-            if (length(file_cov) > 0) {
-              cov_values <- sapply(file_cov, function(x) attr(x, "coverage"))
-              file_percent <- sum(cov_values > 0) / length(cov_values) * 100
-              cat(sprintf("| %s | %.2f%% |\n", file, file_percent), file = summary_file, append = TRUE)
+          # Get per-file coverage by parsing print output
+          cov_output <- capture.output(print(coverage))
+          file_lines <- grep("^R/.*\\.R:", cov_output, value = TRUE)
+          for (line in file_lines) {
+            parts <- strsplit(line, ":")[[1]]
+            if (length(parts) >= 2) {
+              file_name <- trimws(parts[1])
+              file_percent <- trimws(parts[2])
+              cat(sprintf("| %s | %s |\n", file_name, file_percent), file = summary_file, append = TRUE)
             }
           }
 
