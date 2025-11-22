@@ -42,16 +42,16 @@
 #'
 #' @examples
 #' # Calculate horizontal irradiance at Viking 1 landing site on Ls 90 (northern summer solstice)
-#' G_h(Ls = 90, phi = 22.48, longitude = 0, tau = 0.5)
+#' G_h(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5)
 #'
 #' # Find optimal panel tilt angle for the same location and season
 #' optimal_angle(Ls = 90, phi = 22.48)
 #'
 #' # Calculate daily insolation on a horizontal surface
-#' H_h(Ls = 90, phi = 22.48, longitude = 0, tau = 0.5)
+#' H_h(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5)
 #'
 #' # Calculate insolation over 30 sols on an inclined surface
-#' I_i(Ls = 90, phi = 22.48, longitude = 0, tau = 0.5, Ts_start = 0, Ts_end = 30, beta = 25, gamma_c = 0)
+#' I_i(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, Ts_start = 0, Ts_end = 30, beta = 25, gamma_c = 0)
 #'
 #' @references
 #' Appelbaum, J., & Flood, D. J. (1989). Solar Radiation on Mars.
