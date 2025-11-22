@@ -45,6 +45,8 @@ The package implements equations for:
 - **Insolation** - integrated solar energy over time
 - **Utility functions** - sunrise/sunset, optimal angles, polar day/night detection
 
+For a complete list of all functions with descriptions, see [FUNCTIONS.md](docs/FUNCTIONS.md).
+
 ## Parameters
 
 Calculate and plot solar radiation on Mars as a function of the following parameters:
