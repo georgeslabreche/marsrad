@@ -7,16 +7,16 @@
 albedo(latitude, longitude, tau, coordinates_rounding = TRUE)
 }
 \arguments{
-\item{latitude}{Planetary latitude, from -90° to io +90°.}
+\item{latitude}{Planetary latitude [deg], from -90° to +90°}
 
-\item{longitude}{Planetary longitude, from -180° to 180°.}
+\item{longitude}{Planetary longitude [deg], from -180° to 180°}
 
-\item{tau}{Optical depth.}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{coordinates_rounding}{}
+\item{coordinates_rounding}{Logical, whether to round coordinates to nearest grid point}
 }
 \value{
-
+Surface albedo value (dimensionless, 0-1)
 }
 \description{
 Calculate the albedo value given geographical location and tau factor.

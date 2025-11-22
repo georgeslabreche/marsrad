@@ -2,18 +2,20 @@
 % Please edit documentation in R/H_obh.R
 \name{H_obh}
 \alias{H_obh}
-\title{Title}
+\title{Daily beam insolation at top of Mars atmosphere}
 \usage{
 H_obh(Ls, phi)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 }
 \value{
-
+Daily beam insolation at top of atmosphere [Wh/m²-day]
 }
 \description{
-Title
+Calculates the solar beam energy over a full Martian day on a horizontal surface at the top
+of the Martian atmosphere (before atmospheric attenuation). Implements Equation 13 from
+Appelbaum & Flood (1990).
 }

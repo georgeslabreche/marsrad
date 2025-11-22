@@ -3,16 +3,16 @@ Ls_P = 248      # Periphelion.
 e = 0.093377    # Mars orbit eccentricity.
 Mb = 590        # Mean beam irradiance at the top of the Martian atmosphere.
 
-#' Equation 4 (1990): Beam irridiance at the top of the Martian atmosphere [W/m2].
-#' 
-#' Source: 
-#'   Appelbaum, Joseph & Flood, Dennis. (1990).
-#'   Solar radiation on Mars. Solar Energy. 45. 353–363. 10.1016/0038-092X(90)90156-7. 
-#'   https://www.researchgate.net/publication/256334925_Solar_radiation_on_Mars
-#'   
-#' @param Ls Areocentric longitude.
+#' Beam irradiance at top of Martian atmosphere
 #'
-#' @return Beam irradiance [W/m2].
+#' Calculates the solar beam irradiance at the top of the Martian atmosphere (before any
+#' atmospheric effects) as a function of Mars' orbital position. Accounts for Mars' elliptical
+#' orbit which causes seasonal variation in solar intensity. Implements Equation 4 from
+#' Appelbaum & Flood (1990).
+#'
+#' @param Ls Areocentric longitude [deg]
+#'
+#' @return Beam irradiance at top of atmosphere [W/m²]
 #' @export
 G_ob = function(Ls){
   

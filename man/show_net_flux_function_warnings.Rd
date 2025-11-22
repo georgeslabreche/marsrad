@@ -8,7 +8,7 @@ warnings should be thrown for polynomial calculations that have notable error ma
 show_net_flux_function_warnings()
 }
 \value{
-
+Logical TRUE or FALSE
 }
 \description{
 Get the value set in the NET_FLUX_FUNCTION_SHOW_WARNINGS environment variable that determines if net flux function calculation

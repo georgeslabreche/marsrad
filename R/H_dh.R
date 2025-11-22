@@ -8,15 +8,18 @@
 #   https://ntrs.nasa.gov/?R=19890018252
 #
 
-#' Title
+#' Diffuse daily insolation on Mars horizontal surface
 #'
-#' @param Ls 
-#' @param phi 
-#' @param longitude
-#' @param tau 
-#' @param al
+#' Calculates the diffuse solar energy (scattered by atmospheric dust) received over a full
+#' Martian day on a horizontal surface. Obtained by integrating diffuse irradiance from sunrise to sunset.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param longitude Planetary longitude [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param al Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau
+#'
+#' @return Diffuse daily insolation [Wh/m²-day]
 #' @export
 H_dh = function(Ls, phi, longitude, tau, al=albedo(latitude=phi, longitude=longitude, tau=tau)){
   

@@ -4,17 +4,16 @@
 #   Appelbaum, Joseph & Flood, Dennis. (1990). Solar radiation on Mars. Solar Energy. 45. 353–363. 10.1016/0038-092X(90)90156-7. 
 #   https://www.researchgate.net/publication/256334925_Solar_radiation_on_Mars
 
-# The function.
-#   Ls      - Areocentric longitude [deg].
-#   phi     - Latitude [deg].
 
-
-#' The number of Mars daylight hours.
+#' Number of Mars daylight hours
 #'
-#' @param Ls 
-#' @param phi 
+#' Calculates the duration of daylight (time between sunrise and sunset) for a given
+#' location and season on Mars. Implements Equation 10 from Appelbaum & Flood (1990).
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#'
+#' @return Number of daylight hours [h]
 #' @export
 T_d = function(Ls, phi){
   

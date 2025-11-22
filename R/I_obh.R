@@ -3,15 +3,20 @@
 # Based on equations presented in the following publication:
 #   Appelbaum, Joseph & Flood, Dennis. (1990). Solar radiation on Mars. Solar Energy. 45. 353–363. 10.1016/0038-092X(90)90156-7. 
 #   https://ntrs.nasa.gov/?R=19890018252
-#
-#' Title
+
+
+#' Beam insolation at top of Mars atmosphere over time period
 #'
-#' @param Ls 
-#' @param phi 
-#' @param Ts_start 
-#' @param Ts_end
+#' Calculates the solar beam energy on a horizontal surface at the top of the Martian atmosphere
+#' (before atmospheric attenuation) between specified start and end times. Implements Equation 11
+#' from Appelbaum & Flood (1990).
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param Ts_start Start of integration period [h]
+#' @param Ts_end End of integration period [h]
+#'
+#' @return Beam insolation at top of atmosphere over specified time period [Wh/m²]
 #' @export
 I_obh = function(Ls, phi, Ts_start, Ts_end){
   

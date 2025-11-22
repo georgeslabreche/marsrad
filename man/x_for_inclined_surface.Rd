@@ -2,20 +2,21 @@
 % Please edit documentation in R/xy_for_inclined_surface.R
 \name{x_for_inclined_surface}
 \alias{x_for_inclined_surface}
-\title{Title}
+\title{X parameter for inclined surface sunrise/sunset calculations}
 \usage{
 x_for_inclined_surface(phi, beta, gamma_c)
 }
 \arguments{
-\item{phi}{planetary latitude [rad]}
+\item{phi}{Planetary latitude [rad]}
 
-\item{beta}{surface inclination angle [rad]}
+\item{beta}{Surface inclination angle [rad]}
 
-\item{gamma_c}{orientation angle [rad]}
+\item{gamma_c}{Surface azimuth angle [rad]}
 }
 \value{
-
+X parameter (dimensionless)
 }
 \description{
-Title
+Calculates the X parameter used in determining sunrise and sunset times for inclined surfaces.
+Implements Equations 19 and 25 from Appelbaum (1993) for inclined and vertical surfaces.
 }

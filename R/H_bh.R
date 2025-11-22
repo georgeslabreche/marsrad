@@ -6,15 +6,18 @@
 # Based on equations presented in the following publication:
 #   Appelbaum, Joseph & Flood, Dennis. (1990). Solar radiation on Mars. Solar Energy. 45. 353–363. 10.1016/0038-092X(90)90156-7. 
 #   https://ntrs.nasa.gov/?R=19890018252
-#
 
-#' Title
+
+#' Beam daily insolation on Mars horizontal surface
 #'
-#' @param Ls 
-#' @param phi 
-#' @param tau 
+#' Calculates the direct beam solar energy received over a full Martian day on a horizontal surface.
+#' Obtained by integrating beam irradiance from sunrise to sunset.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#'
+#' @return Beam daily insolation [Wh/m²-day]
 #' @export
 H_bh = function(Ls, phi, tau){
   

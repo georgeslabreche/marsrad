@@ -2,28 +2,30 @@
 % Please edit documentation in R/G_bi.R
 \name{G_bi}
 \alias{G_bi}
-\title{Title}
+\title{Direct beam irradiance on Mars inclined surface}
 \usage{
 G_bi(Ls, phi, Ts, z = Z(Ls = Ls, phi = phi, Ts = Ts), tau, beta, gamma_c)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)}
 }
 \value{
-
+Direct beam irradiance on inclined surface [W/m²]
 }
 \description{
-Title
+Calculates the direct beam solar irradiance incident on an inclined surface on Mars.
+Accounts for the sun's angle of incidence on the tilted and oriented surface. Based on
+Appelbaum, Flood & Norambuena (1994).
 }

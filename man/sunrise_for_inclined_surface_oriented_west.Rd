@@ -2,22 +2,23 @@
 % Please edit documentation in R/sunrise.R
 \name{sunrise_for_inclined_surface_oriented_west}
 \alias{sunrise_for_inclined_surface_oriented_west}
-\title{Title}
+\title{Sunrise for inclined surface oriented westward}
 \usage{
 sunrise_for_inclined_surface_oriented_west(phi, beta, gamma_c, delta)
 }
 \arguments{
-\item{phi}{}
+\item{phi}{Planetary latitude [rad]}
 
-\item{beta}{}
+\item{beta}{Surface tilt angle [rad]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [rad]}
 
-\item{delta}{}
+\item{delta}{Solar declination angle [rad]}
 }
 \value{
-
+Sunrise hour angle [rad], or NA if sun never rises on this surface
 }
 \description{
-Title
+Calculates sunrise hour angle for an inclined surface facing west.
+Implements Equation 17 from Appelbaum (1993).
 }

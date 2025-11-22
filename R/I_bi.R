@@ -1,14 +1,17 @@
-#' Title
+#' Beam insolation on Mars inclined surface over time period
 #'
-#' @param Ls 
-#' @param phi 
-#' @param tau 
-#' @param Ts_start 
-#' @param Ts_end 
-#' @param beta 
-#' @param gamma_c
+#' Calculates the direct beam solar energy received on an inclined surface between specified
+#' start and end times. Obtained by integrating beam irradiance over the time period.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param Ts_start Start of integration period [h]
+#' @param Ts_end End of integration period [h]
+#' @param beta Surface tilt/slope angle from horizontal [deg]
+#' @param gamma_c Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)
+#'
+#' @return Beam insolation on inclined surface over specified time period [Wh/m²]
 #' @export
 I_bi = function(Ls, phi, tau, Ts_start, Ts_end, beta, gamma_c){
   

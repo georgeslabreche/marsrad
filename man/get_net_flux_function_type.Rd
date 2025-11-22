@@ -9,7 +9,7 @@ If NET_FLUX_FUNCTION_TYPE has not been set then default to 'polynomial'.}
 get_net_flux_function_type()
 }
 \value{
-
+Character string: 'lookup_v1', 'lookup_v2', or 'polynomial'
 }
 \description{
 Get the net flux function type that is set in the NET_FLUX_FUNCTION_TYPE environment variable.

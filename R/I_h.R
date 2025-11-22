@@ -3,21 +3,22 @@
 # Based on equations presented in the following publication:
 #   Appelbaum, Joseph & Flood, Dennis. (1990). Solar radiation on Mars. Solar Energy. 45. 353–363. 10.1016/0038-092X(90)90156-7. 
 #   https://ntrs.nasa.gov/?R=19890018252
-#
 
 
-
-#' Title
+#' Global insolation on Mars horizontal surface over time period
 #'
-#' @param Ls 
-#' @param phi 
-#' @param longitude 
-#' @param tau 
-#' @param Ts_start 
-#' @param Ts_end 
-#' @param al
+#' Calculates the total solar energy received on a horizontal surface between specified start
+#' and end times. Obtained by integrating global irradiance over the time period.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param longitude Planetary longitude [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param Ts_start Start of integration period [h]
+#' @param Ts_end End of integration period [h]
+#' @param al Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau
+#'
+#' @return Global insolation over specified time period [Wh/m²]
 #' @export
 I_h = function(Ls, phi, longitude, tau, Ts_start, Ts_end, al=albedo(latitude=phi, longitude=longitude, tau=tau)){
   

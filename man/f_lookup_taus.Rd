@@ -2,13 +2,14 @@
 % Please edit documentation in R/f.R
 \name{f_lookup_taus}
 \alias{f_lookup_taus}
-\title{Title}
+\title{Available optical depth values in net flux lookup tables}
 \usage{
 f_lookup_taus()
 }
 \value{
-
+Numeric vector of available tau values
 }
 \description{
-Title
+Returns the tau values available in the selected lookup table version.
+Only works when NET_FLUX_FUNCTION_TYPE is set to 'lookup_v1' or 'lookup_v2'.
 }

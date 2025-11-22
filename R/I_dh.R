@@ -5,17 +5,20 @@
 #   https://ntrs.nasa.gov/?R=19890018252
 #
 
-#' Title
+#' Diffuse insolation on Mars horizontal surface over time period
 #'
-#' @param Ls 
-#' @param phi 
-#' @param longitude
-#' @param tau 
-#' @param Ts_start 
-#' @param Ts_end 
-#' @param al
+#' Calculates the diffuse solar energy (scattered by atmospheric dust) received on a horizontal
+#' surface between specified start and end times. Computed as difference between global and beam insolation.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param longitude Planetary longitude [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param Ts_start Start of integration period [h]
+#' @param Ts_end End of integration period [h]
+#' @param al Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau
+#'
+#' @return Diffuse insolation over specified time period [Wh/m²]
 #' @export
 I_dh = function(Ls, phi, longitude, tau, Ts_start, Ts_end, al=albedo(latitude=phi, longitude=longitude, tau=tau)){
   

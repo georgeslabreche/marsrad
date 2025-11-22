@@ -1,15 +1,16 @@
 # From (1993): (19) for inclined and (25) for vertical surface.
-# Angles in rad.
 # TODO: Make this a hidden function.
 
-
-#' Title
+#' X parameter for inclined surface sunrise/sunset calculations
 #'
-#' @param phi planetary latitude [rad]
-#' @param beta surface inclination angle [rad]
-#' @param gamma_c orientation angle [rad]
+#' Calculates the X parameter used in determining sunrise and sunset times for inclined surfaces.
+#' Implements Equations 19 and 25 from Appelbaum (1993) for inclined and vertical surfaces.
 #'
-#' @return
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface inclination angle [rad]
+#' @param gamma_c Surface azimuth angle [rad]
+#'
+#' @return X parameter (dimensionless)
 x_for_inclined_surface = function(phi, beta, gamma_c){
   
   # FIXME: For vertical surface, i.e. beta = 90. Need gamma_s?!?!
@@ -24,18 +25,19 @@ x_for_inclined_surface = function(phi, beta, gamma_c){
 
 
 # From (1993): (20) for inclined and (26) for vertical surface.
-# Angles in rad.
 # TODO: Make this a hidden function.
 
-
-#' Title
+#' Y parameter for inclined surface sunrise/sunset calculations
 #'
-#' @param phi planetary latitude [rad]
-#' @param beta surface inclination angle [rad]
-#' @param gamma_c orientation angle [rad]
-#' @param delta declination angle [rad]
+#' Calculates the Y parameter used in determining sunrise and sunset times for inclined surfaces.
+#' Implements Equations 20 and 26 from Appelbaum (1993) for inclined and vertical surfaces.
 #'
-#' @return
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface inclination angle [rad]
+#' @param gamma_c Surface azimuth angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Y parameter (dimensionless)
 y_for_inclined_surface = function(phi, beta, gamma_c, delta){
   
   # a is zero for a vertical surface, i.e. beta = 90 deg. See (26) from (1993)
@@ -46,18 +48,3 @@ y_for_inclined_surface = function(phi, beta, gamma_c, delta){
   
   return(y)
 }
-
-# Ls=1*pi/180
-# phi=-2*pi/180
-# #beta=44.9851445949885*pi/180
-# beta=1*pi/180
-# gamma_c=0*pi/180
-# 
-# 
-# delta_rad = declination(Ls)
-# 
-# x = x_for_inclined_surface(phi=phi, beta=beta, gamma_c=gamma_c)
-# #y = y_for_inclined_surface(phi=phi, beta=beta, gamma_c=gamma_c, delta=delta_rad)
-# 
-# print(x)
-# print(y)

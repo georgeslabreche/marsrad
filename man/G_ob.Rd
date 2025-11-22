@@ -2,19 +2,19 @@
 % Please edit documentation in R/G_ob.R
 \name{G_ob}
 \alias{G_ob}
-\title{Equation 4 (1990): Beam irridiance at the top of the Martian atmosphere [W/m2].}
+\title{Beam irradiance at top of Martian atmosphere}
 \usage{
 G_ob(Ls)
 }
 \arguments{
-\item{Ls}{Areocentric longitude.}
+\item{Ls}{Areocentric longitude [deg]}
 }
 \value{
-Beam irradiance [W/m2].
+Beam irradiance at top of atmosphere [W/m²]
 }
 \description{
-Source: 
-  Appelbaum, Joseph & Flood, Dennis. (1990).
-  Solar radiation on Mars. Solar Energy. 45. 353–363. 10.1016/0038-092X(90)90156-7. 
-  https://www.researchgate.net/publication/256334925_Solar_radiation_on_Mars
+Calculates the solar beam irradiance at the top of the Martian atmosphere (before any
+atmospheric effects) as a function of Mars' orbital position. Accounts for Mars' elliptical
+orbit which causes seasonal variation in solar intensity. Implements Equation 4 from
+Appelbaum & Flood (1990).
 }

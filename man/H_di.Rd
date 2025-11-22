@@ -2,7 +2,7 @@
 % Please edit documentation in R/H_di.R
 \name{H_di}
 \alias{H_di}
-\title{Title}
+\title{Diffuse daily insolation on Mars inclined surface}
 \usage{
 H_di(
   Ls,
@@ -15,23 +15,24 @@ H_di(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)}
 }
 \value{
-
+Diffuse daily insolation on inclined surface [Wh/m²-day]
 }
 \description{
-Title
+Calculates the diffuse solar energy (scattered by atmospheric dust) received over a full
+Martian day on an inclined surface. Obtained by integrating diffuse irradiance from sunrise to sunset.
 }

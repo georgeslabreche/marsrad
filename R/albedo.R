@@ -9,12 +9,12 @@
 #'   Solar radiation on Mars — Update 1991. Solar Energy. 50. 35-51. 10.1016/0038-092X(93)90006-A:
 #'   https://www.researchgate.net/publication/223850868_Solar_radiation_on_Mars-Update_1991
 #'
-#' @param latitude Planetary latitude, from -90° to io +90°.
-#' @param longitude Planetary longitude, from -180° to 180°.
-#' @param tau Optical depth.
-#' @param coordinates_rounding 
+#' @param latitude Planetary latitude [deg], from -90° to +90°
+#' @param longitude Planetary longitude [deg], from -180° to 180°
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param coordinates_rounding Logical, whether to round coordinates to nearest grid point
 #'
-#' @return
+#' @return Surface albedo value (dimensionless, 0-1)
 #' @export
 #'
 #'

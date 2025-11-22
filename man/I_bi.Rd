@@ -2,28 +2,29 @@
 % Please edit documentation in R/I_bi.R
 \name{I_bi}
 \alias{I_bi}
-\title{Title}
+\title{Beam insolation on Mars inclined surface over time period}
 \usage{
 I_bi(Ls, phi, tau, Ts_start, Ts_end, beta, gamma_c)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{Ts_start}{}
+\item{Ts_start}{Start of integration period [h]}
 
-\item{Ts_end}{}
+\item{Ts_end}{End of integration period [h]}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)}
 }
 \value{
-
+Beam insolation on inclined surface over specified time period [Wh/m²]
 }
 \description{
-Title
+Calculates the direct beam solar energy received on an inclined surface between specified
+start and end times. Obtained by integrating beam irradiance over the time period.
 }

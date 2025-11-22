@@ -1,9 +1,12 @@
-#' Title
+#' Check if location is experiencing polar night
 #'
-#' @param Ls 
-#' @param phi 
+#' Determines whether a given location on Mars is experiencing polar night (24-hour darkness)
+#' for the specified season. During polar night, the sun remains below the horizon continuously.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#'
+#' @return TRUE if experiencing polar night, FALSE otherwise
 #' @export
 is_polar_night = function(Ls, phi){
   

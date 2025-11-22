@@ -2,24 +2,25 @@
 % Please edit documentation in R/sunset.R
 \name{sunset}
 \alias{sunset}
-\title{Title}
+\title{Sunset time on Mars}
 \usage{
 sunset(Ls, phi, beta = NULL, gamma_c = NULL, unit = 1)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{beta}{}
+\item{beta}{Surface tilt angle [deg]. Optional, for inclined surfaces}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Optional, for inclined surfaces. Zero facing equator, east negative, west positive (-180 to +180)}
 
-\item{unit}{}
+\item{unit}{Output unit: 1 for radians, 2 for degrees, 3 for solar hours (default: 1)}
 }
 \value{
-
+Sunset time [rad], [deg], or [h] depending on unit parameter, or NA during polar night/day
 }
 \description{
-Title
+Calculates the sunset time for a horizontal or inclined surface on Mars.
+Returns NA during polar night/day periods.
 }

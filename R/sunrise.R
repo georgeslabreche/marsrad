@@ -1,19 +1,20 @@
-# Get the moment in which the sunrise occurs.
+# (30) in (1993).
 # FIXME: 
 #   1. For surface oriented towards the equator, gamma_c = 0 or 180/-180
 #   2. For vertical surface (when Beta=90)
-
-# (30) in (1993).
-# Angles in rad.
+#   3. Not exactly what is in (21) to determine omega_rad. 
 # TODO: Make this a hidden function.
-# FIXME: Not exactly what is in (21) to determine omega_rad. 
-#' Title
+
+#' Sunrise for inclined surface oriented toward equator
 #'
-#' @param phi 
-#' @param beta 
-#' @param delta 
+#' Calculates sunrise hour angle for an inclined surface facing the equator.
+#' Implements Equation 30 from Appelbaum (1993).
 #'
-#' @return
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface tilt angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunrise hour angle [rad]
 #' @export
 sunrise_for_inclined_surface_oriented_equator = function(phi, beta, delta){
   
@@ -35,14 +36,17 @@ sunrise_for_inclined_surface_oriented_equator = function(phi, beta, delta){
 # (15) from (1993).
 # Angles in rad.
 # TODO: Make this a hidden function.
-#' Title
+#' Sunrise for inclined surface oriented eastward
 #'
-#' @param phi 
-#' @param beta 
-#' @param gamma_c 
-#' @param delta 
+#' Calculates sunrise hour angle for an inclined surface facing east.
+#' Implements Equation 15 from Appelbaum (1993).
 #'
-#' @return
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface tilt angle [rad]
+#' @param gamma_c Surface azimuth angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunrise hour angle [rad], or NA if sun never rises on this surface
 #' @export
 sunrise_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta){
   
@@ -77,14 +81,17 @@ sunrise_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta)
 # (17) from (1993).
 # Angles in rad.
 # TODO: Make this a hidden function.
-#' Title
+#' Sunrise for inclined surface oriented westward
 #'
-#' @param phi 
-#' @param beta 
-#' @param gamma_c 
-#' @param delta 
+#' Calculates sunrise hour angle for an inclined surface facing west.
+#' Implements Equation 17 from Appelbaum (1993).
 #'
-#' @return
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface tilt angle [rad]
+#' @param gamma_c Surface azimuth angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunrise hour angle [rad], or NA if sun never rises on this surface
 #' @export
 sunrise_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta){
   
@@ -117,12 +124,15 @@ sunrise_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta)
 
 # Angles in rad.
 # TODO: Make this a hidden function.
-#' Title
+#' Sunrise for horizontal surface
 #'
-#' @param phi 
-#' @param delta 
+#' Calculates sunrise hour angle for a horizontal surface.
+#' Implements Equation 8 from Appelbaum (1993).
 #'
-#' @return
+#' @param phi Planetary latitude [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunrise hour angle [rad]
 #' @export
 sunrise_for_horizontal_surface = function(phi, delta){
   
@@ -134,14 +144,17 @@ sunrise_for_horizontal_surface = function(phi, delta){
 
 # Angles in rad.
 # TODO: Make this a hidden function.
-#' Title
+#' Sunrise for inclined surface (general)
 #'
-#' @param phi 
-#' @param beta 
-#' @param gamma_c 
-#' @param delta 
+#' Calculates sunrise hour angle for an inclined surface with any orientation.
+#' Dispatches to specific orientation functions based on gamma_c value.
 #'
-#' @return
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface tilt angle [rad]
+#' @param gamma_c Surface azimuth angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunrise hour angle [rad]
 #' @export
 sunrise_for_inclined_surface = function(phi, beta, gamma_c, delta){
   
@@ -180,15 +193,18 @@ sunrise_for_inclined_surface = function(phi, beta, gamma_c, delta){
 #           - 1 for radians.
 #           - 2 for degrees.
 #           - 3 for solar hour.
-#' Title
+#' Sunrise time on Mars
 #'
-#' @param Ls 
-#' @param phi 
-#' @param beta 
-#' @param gamma_c 
-#' @param unit 
+#' Calculates the sunrise time for a horizontal or inclined surface on Mars.
+#' Returns NA during polar night/day periods.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param beta Surface tilt angle [deg]. Optional, for inclined surfaces
+#' @param gamma_c Surface azimuth angle [deg]. Optional, for inclined surfaces. Zero facing equator, east negative, west positive (-180 to +180)
+#' @param unit Output unit: 1 for radians, 2 for degrees, 3 for solar hours (default: 1)
+#'
+#' @return Sunrise time [rad], [deg], or [h] depending on unit parameter, or NA during polar night/day
 #' @export
 sunrise = function(Ls, phi, beta=NULL, gamma_c=NULL, unit=1){
   

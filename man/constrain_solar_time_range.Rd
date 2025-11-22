@@ -2,7 +2,7 @@
 % Please edit documentation in R/constrain_solar_time_range.R
 \name{constrain_solar_time_range}
 \alias{constrain_solar_time_range}
-\title{Title}
+\title{Constrain solar time range to daylight hours}
 \usage{
 constrain_solar_time_range(
   Ls,
@@ -14,21 +14,23 @@ constrain_solar_time_range(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{Ts_start}{}
+\item{Ts_start}{Start time to constrain [h]}
 
-\item{Ts_end}{}
+\item{Ts_end}{End time to constrain [h]}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]. Optional, for inclined surfaces}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Optional, for inclined surfaces}
 }
 \value{
-
+List with Ts_start and Ts_end constrained to daylight hours, or NULL if no daylight
 }
 \description{
-Title
+Adjusts the specified time range to only include periods when the sun is above the horizon.
+Accounts for sunrise/sunset times and polar day/night conditions. Returns NULL if no sunlight
+occurs during the specified period.
 }

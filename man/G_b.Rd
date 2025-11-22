@@ -2,24 +2,26 @@
 % Please edit documentation in R/G_b.R
 \name{G_b}
 \alias{G_b}
-\title{Title}
+\title{Direct beam irradiance on Mars surface normal to solar rays}
 \usage{
 G_b(Ls, phi = NULL, Ts = NULL, z = Z(Ls = Ls, phi = phi, Ts = Ts), tau)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]. Can be NULL if z is provided}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]. Can be NULL if z is provided}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 }
 \value{
-
+Direct beam irradiance normal to sun [W/m²]
 }
 \description{
-Title
+Calculates the direct beam solar irradiance on the Martian surface normal to the solar rays
+(i.e., perpendicular to the sun's direction). Uses Beer's law to account for atmospheric
+attenuation. Implements Equation 14 from Appelbaum & Flood (1990).
 }

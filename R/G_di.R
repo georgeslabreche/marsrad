@@ -1,15 +1,18 @@
-#' Title
+#' Diffuse irradiance on Mars inclined surface
 #'
-#' @param Ls 
-#' @param phi 
-#' @param longitude 
-#' @param Ts 
-#' @param z 
-#' @param tau 
-#' @param al 
-#' @param beta
+#' Calculates the diffuse solar irradiance (scattered by atmospheric dust) incident on an
+#' inclined surface on Mars. Accounts for the view factor of the sky from the tilted surface.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param longitude Planetary longitude [deg]
+#' @param Ts Solar time [h]
+#' @param z Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param al Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau
+#' @param beta Surface tilt/slope angle from horizontal [deg]
+#'
+#' @return Diffuse irradiance on inclined surface [W/m²]
 #' @export
 G_di = function(Ls, phi, longitude, Ts, z=Z(Ls=Ls,  phi=phi, Ts=Ts), tau, al=albedo(latitude=phi, longitude=longitude, tau=tau), beta){
   

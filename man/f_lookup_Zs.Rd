@@ -2,13 +2,14 @@
 % Please edit documentation in R/f.R
 \name{f_lookup_Zs}
 \alias{f_lookup_Zs}
-\title{Title}
+\title{Available zenith angles in net flux lookup tables}
 \usage{
 f_lookup_Zs()
 }
 \value{
-
+Numeric vector of available zenith angle values [deg]
 }
 \description{
-Title
+Returns the zenith angle values available in the selected lookup table version.
+Only works when NET_FLUX_FUNCTION_TYPE is set to 'lookup_v1' or 'lookup_v2'.
 }

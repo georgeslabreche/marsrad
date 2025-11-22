@@ -2,24 +2,25 @@
 % Please edit documentation in R/H_bi.R
 \name{H_bi}
 \alias{H_bi}
-\title{Title}
+\title{Beam daily insolation on Mars inclined surface}
 \usage{
 H_bi(Ls, phi, tau, beta, gamma_c)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)}
 }
 \value{
-
+Beam daily insolation on inclined surface [Wh/m²-day]
 }
 \description{
-Title
+Calculates the direct beam solar energy received over a full Martian day on an inclined surface.
+Obtained by integrating beam irradiance from sunrise to sunset.
 }

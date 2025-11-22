@@ -2,18 +2,19 @@
 % Please edit documentation in R/sunset.R
 \name{sunset_for_horizontal_surface}
 \alias{sunset_for_horizontal_surface}
-\title{Get the moment in which the sunset occurs.}
+\title{Sunset for horizontal surface}
 \usage{
 sunset_for_horizontal_surface(phi, delta)
 }
 \arguments{
-\item{phi}{}
+\item{phi}{Planetary latitude [rad]}
 
-\item{delta}{}
+\item{delta}{Solar declination angle [rad]}
 }
 \value{
-
+Sunset hour angle [rad]
 }
 \description{
-Get the moment in which the sunset occurs.
+Calculates sunset hour angle for a horizontal surface.
+Implements Equation 9 from Appelbaum (1993).
 }

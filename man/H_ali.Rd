@@ -2,7 +2,7 @@
 % Please edit documentation in R/H_ali.R
 \name{H_ali}
 \alias{H_ali}
-\title{Title}
+\title{Albedo-reflected daily insolation on Mars inclined surface}
 \usage{
 H_ali(
   Ls,
@@ -15,23 +15,24 @@ H_ali(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)}
 }
 \value{
-
+Albedo-reflected daily insolation on inclined surface [Wh/m²-day]
 }
 \description{
-Title
+Calculates the ground-reflected solar energy received over a full Martian day on an inclined
+surface. Obtained by integrating albedo-reflected irradiance from sunrise to sunset.
 }

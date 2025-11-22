@@ -5,7 +5,7 @@ Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)
 #' Can either be 'lookup_v1', 'lookup_v2', or 'polynomial'.
 #' If NET_FLUX_FUNCTION_TYPE has not been set then default to 'polynomial'.
 #'
-#' @return
+#' @return Character string: 'lookup_v1', 'lookup_v2', or 'polynomial'
 get_net_flux_function_type = function(){
   net_flux_function_type = ifelse(Sys.getenv("NET_FLUX_FUNCTION_TYPE") == "", "polynomial", Sys.getenv("NET_FLUX_FUNCTION_TYPE"))
   return(net_flux_function_type)
@@ -15,7 +15,7 @@ get_net_flux_function_type = function(){
 #' Get the value set in the NET_FLUX_FUNCTION_SHOW_WARNINGS environment variable that determines if net flux function calculation
 #' warnings should be thrown for polynomial calculations that have notable error margin.
 #'
-#' @return
+#' @return Logical TRUE or FALSE
 show_net_flux_function_warnings = function(){
   
   net_flux_function_type = ifelse(Sys.getenv("NET_FLUX_FUNCTION_SHOW_WARNINGS") == "", "true", Sys.getenv("NET_FLUX_FUNCTION_SHOW_WARNINGS"))
@@ -31,9 +31,12 @@ show_net_flux_function_warnings = function(){
 
 # The function.
 #
-#' Title
+#' Available optical depth values in net flux lookup tables
 #'
-#' @return
+#' Returns the tau values available in the selected lookup table version.
+#' Only works when NET_FLUX_FUNCTION_TYPE is set to 'lookup_v1' or 'lookup_v2'.
+#'
+#' @return Numeric vector of available tau values
 #' @export
 f_lookup_taus = function(){
   
@@ -50,10 +53,12 @@ f_lookup_taus = function(){
   }
 }
 
-# The function.
-#' Title
-#' 
-#' @return
+#' Available zenith angles in net flux lookup tables
+#'
+#' Returns the zenith angle values available in the selected lookup table version.
+#' Only works when NET_FLUX_FUNCTION_TYPE is set to 'lookup_v1' or 'lookup_v2'.
+#'
+#' @return Numeric vector of available zenith angle values [deg]
 #' @export
 f_lookup_Zs = function(){
   
@@ -70,15 +75,16 @@ f_lookup_Zs = function(){
   }
 }
 
-#' The coefficient lookup function.
+#' Coefficient lookup for normalized net flux polynomial
 #'
-#' Source: Table IV - Normalized Net Flux Function Coefficients in Appelbaum, Joseph & Flood, Dennis (1990) Update 1990.
-#' 
-#' @param i 
-#' @param j 
-#' @param k 
+#' Retrieves polynomial coefficients for the analytical net flux function.
+#' Based on Table IV in Appelbaum & Flood (1990) Update 1990.
 #'
-#' @return
+#' @param i Tau exponent index (0-5)
+#' @param j Zenith angle exponent index (0-5)
+#' @param k Albedo exponent (0 or 1)
+#'
+#' @return Polynomial coefficient value
 p = function(i, j, k){
   
   if(k==0){
@@ -205,16 +211,17 @@ f_analytical = function(z, tau, al=0.1){
 
 
 
-#' he analytical expression of the normalized net flux function.
-#' 
-#' Source: Equation 20 (1990).
+#' Normalized net flux function
 #'
-#' @param z Zenith angle [deg].
-#' @param tau Optical depth.
-#' @param al Albedo (ranges from 0.1 to 0.4).
-#' @param pub_year
+#' Calculates the normalized net solar flux on the Martian surface accounting for multiple
+#' wavelength and multiple scattering in the atmosphere. Based on Pollack's calculations
+#' presented in Appelbaum & Flood (1990). Can use polynomial expression or lookup tables.
 #'
-#' @return Normalized net flux.
+#' @param z Sun zenith angle [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param al Surface albedo (dimensionless, ranges from 0.1 to 0.4)
+#'
+#' @return Normalized net flux (dimensionless)
 #' @export
 f = function(z, tau, al=0.1){
   

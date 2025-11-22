@@ -2,26 +2,27 @@
 % Please edit documentation in R/is_irradiated.R
 \name{is_irradiated}
 \alias{is_irradiated}
-\title{Check if there is solar irradiance at the given location and moment.}
+\title{Check if surface is receiving solar irradiance}
 \usage{
 is_irradiated(Ls, phi, Ts, z = Z(Ls, Ts, phi), beta = NULL, gamma_c = NULL)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]. Optional, for inclined surfaces}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Optional, for inclined surfaces}
 }
 \value{
-
+TRUE if surface is receiving irradiance, FALSE otherwise
 }
 \description{
-Check if there is solar irradiance at the given location and moment.
+Determines whether a surface at a given location and time is receiving solar irradiance.
+Accounts for polar night/day conditions, sunrise/sunset times, and sun position below horizon.
 }

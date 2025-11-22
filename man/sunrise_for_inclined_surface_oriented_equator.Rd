@@ -2,20 +2,21 @@
 % Please edit documentation in R/sunrise.R
 \name{sunrise_for_inclined_surface_oriented_equator}
 \alias{sunrise_for_inclined_surface_oriented_equator}
-\title{Title}
+\title{Sunrise for inclined surface oriented toward equator}
 \usage{
 sunrise_for_inclined_surface_oriented_equator(phi, beta, delta)
 }
 \arguments{
-\item{phi}{}
+\item{phi}{Planetary latitude [rad]}
 
-\item{beta}{}
+\item{beta}{Surface tilt angle [rad]}
 
-\item{delta}{}
+\item{delta}{Solar declination angle [rad]}
 }
 \value{
-
+Sunrise hour angle [rad]
 }
 \description{
-Title
+Calculates sunrise hour angle for an inclined surface facing the equator.
+Implements Equation 30 from Appelbaum (1993).
 }

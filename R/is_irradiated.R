@@ -1,16 +1,19 @@
 Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)
-
 # TODO: Write a test script.
-#' Check if there is solar irradiance at the given location and moment.
+
+#' Check if surface is receiving solar irradiance
 #'
-#' @param Ls 
-#' @param phi 
-#' @param Ts 
-#' @param z 
-#' @param beta 
-#' @param gamma_c
+#' Determines whether a surface at a given location and time is receiving solar irradiance.
+#' Accounts for polar night/day conditions, sunrise/sunset times, and sun position below horizon.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param Ts Solar time [h]
+#' @param z Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts
+#' @param beta Surface tilt/slope angle from horizontal [deg]. Optional, for inclined surfaces
+#' @param gamma_c Surface azimuth angle [deg]. Optional, for inclined surfaces
+#'
+#' @return TRUE if surface is receiving irradiance, FALSE otherwise
 #' @export
 is_irradiated = function(Ls, phi, Ts, z=Z(Ls, Ts, phi), beta=NULL, gamma_c=NULL){
 

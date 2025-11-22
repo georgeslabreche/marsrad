@@ -2,18 +2,19 @@
 % Please edit documentation in R/is_polar_day.R
 \name{is_polar_day}
 \alias{is_polar_day}
-\title{Title}
+\title{Check if location is experiencing polar day}
 \usage{
 is_polar_day(Ls, phi)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 }
 \value{
-
+TRUE if experiencing polar day, FALSE otherwise
 }
 \description{
-Title
+Determines whether a given location on Mars is experiencing polar day (24-hour sunlight)
+for the specified season. During polar day, the sun remains above the horizon continuously.
 }

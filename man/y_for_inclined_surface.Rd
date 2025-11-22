@@ -2,22 +2,23 @@
 % Please edit documentation in R/xy_for_inclined_surface.R
 \name{y_for_inclined_surface}
 \alias{y_for_inclined_surface}
-\title{Title}
+\title{Y parameter for inclined surface sunrise/sunset calculations}
 \usage{
 y_for_inclined_surface(phi, beta, gamma_c, delta)
 }
 \arguments{
-\item{phi}{planetary latitude [rad]}
+\item{phi}{Planetary latitude [rad]}
 
-\item{beta}{surface inclination angle [rad]}
+\item{beta}{Surface inclination angle [rad]}
 
-\item{gamma_c}{orientation angle [rad]}
+\item{gamma_c}{Surface azimuth angle [rad]}
 
-\item{delta}{declination angle [rad]}
+\item{delta}{Solar declination angle [rad]}
 }
 \value{
-
+Y parameter (dimensionless)
 }
 \description{
-Title
+Calculates the Y parameter used in determining sunrise and sunset times for inclined surfaces.
+Implements Equations 20 and 26 from Appelbaum (1993) for inclined and vertical surfaces.
 }

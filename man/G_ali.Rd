@@ -2,7 +2,7 @@
 % Please edit documentation in R/G_ali.R
 \name{G_ali}
 \alias{G_ali}
-\title{Title}
+\title{Albedo-reflected irradiance on Mars inclined surface}
 \usage{
 G_ali(
   Ls,
@@ -16,25 +16,26 @@ G_ali(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 }
 \value{
-
+Albedo-reflected irradiance on inclined surface [W/m²]
 }
 \description{
-Title
+Calculates the solar irradiance reflected from the Martian surface (ground-reflected radiation)
+incident on an inclined surface. Accounts for the view factor of the ground from the tilted surface.
 }

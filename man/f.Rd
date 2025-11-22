@@ -2,22 +2,22 @@
 % Please edit documentation in R/f.R
 \name{f}
 \alias{f}
-\title{he analytical expression of the normalized net flux function.}
+\title{Normalized net flux function}
 \usage{
 f(z, tau, al = 0.1)
 }
 \arguments{
-\item{z}{Zenith angle [deg].}
+\item{z}{Sun zenith angle [deg]}
 
-\item{tau}{Optical depth.}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{al}{Albedo (ranges from 0.1 to 0.4).}
-
-\item{pub_year}{}
+\item{al}{Surface albedo (dimensionless, ranges from 0.1 to 0.4)}
 }
 \value{
-Normalized net flux.
+Normalized net flux (dimensionless)
 }
 \description{
-Source: Equation 20 (1990).
+Calculates the normalized net solar flux on the Martian surface accounting for multiple
+wavelength and multiple scattering in the atmosphere. Based on Pollack's calculations
+presented in Appelbaum & Flood (1990). Can use polynomial expression or lookup tables.
 }

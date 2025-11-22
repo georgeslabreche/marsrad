@@ -2,20 +2,21 @@
 % Please edit documentation in R/f.R
 \name{p}
 \alias{p}
-\title{The coefficient lookup function.}
+\title{Coefficient lookup for normalized net flux polynomial}
 \usage{
 p(i, j, k)
 }
 \arguments{
-\item{i}{}
+\item{i}{Tau exponent index (0-5)}
 
-\item{j}{}
+\item{j}{Zenith angle exponent index (0-5)}
 
-\item{k}{}
+\item{k}{Albedo exponent (0 or 1)}
 }
 \value{
-
+Polynomial coefficient value
 }
 \description{
-Source: Table IV - Normalized Net Flux Function Coefficients in Appelbaum, Joseph & Flood, Dennis (1990) Update 1990.
+Retrieves polynomial coefficients for the analytical net flux function.
+Based on Table IV in Appelbaum & Flood (1990) Update 1990.
 }

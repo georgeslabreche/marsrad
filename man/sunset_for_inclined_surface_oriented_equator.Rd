@@ -2,20 +2,21 @@
 % Please edit documentation in R/sunset.R
 \name{sunset_for_inclined_surface_oriented_equator}
 \alias{sunset_for_inclined_surface_oriented_equator}
-\title{(31) in (1993).}
+\title{Sunset for inclined surface oriented toward equator}
 \usage{
 sunset_for_inclined_surface_oriented_equator(phi, beta, delta)
 }
 \arguments{
-\item{phi}{}
+\item{phi}{Planetary latitude [rad]}
 
-\item{beta}{}
+\item{beta}{Surface tilt angle [rad]}
 
-\item{delta}{}
+\item{delta}{Solar declination angle [rad]}
 }
 \value{
-
+Sunset hour angle [rad]
 }
 \description{
-(31) in (1993).
+Calculates sunset hour angle for an inclined surface facing the equator.
+Implements Equation 31 from Appelbaum (1993).
 }

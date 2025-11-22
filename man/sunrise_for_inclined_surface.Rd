@@ -2,22 +2,23 @@
 % Please edit documentation in R/sunrise.R
 \name{sunrise_for_inclined_surface}
 \alias{sunrise_for_inclined_surface}
-\title{Title}
+\title{Sunrise for inclined surface (general)}
 \usage{
 sunrise_for_inclined_surface(phi, beta, gamma_c, delta)
 }
 \arguments{
-\item{phi}{}
+\item{phi}{Planetary latitude [rad]}
 
-\item{beta}{}
+\item{beta}{Surface tilt angle [rad]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [rad]}
 
-\item{delta}{}
+\item{delta}{Solar declination angle [rad]}
 }
 \value{
-
+Sunrise hour angle [rad]
 }
 \description{
-Title
+Calculates sunrise hour angle for an inclined surface with any orientation.
+Dispatches to specific orientation functions based on gamma_c value.
 }

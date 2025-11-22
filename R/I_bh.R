@@ -6,18 +6,18 @@
 #
 
 
-# Equation 19 (1990): Beam hourly insolation on Mars horizontal surface.
-# 
-#   al  - NOT NEEDED - Included for looping convenience with other functions.
-#' Title
+#' Beam insolation on Mars horizontal surface over time period
 #'
-#' @param Ls 
-#' @param phi 
-#' @param tau 
-#' @param Ts_start 
-#' @param Ts_end 
+#' Calculates the direct beam solar energy received on a horizontal surface between specified
+#' start and end times. Implements Equation 19 from Appelbaum & Flood (1990).
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param Ts_start Start of integration period [h]
+#' @param Ts_end End of integration period [h]
+#'
+#' @return Beam insolation over specified time period [Wh/m²]
 #' @export
 I_bh = function(Ls, phi, tau, Ts_start, Ts_end){
 

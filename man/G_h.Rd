@@ -2,7 +2,7 @@
 % Please edit documentation in R/G_h.R
 \name{G_h}
 \alias{G_h}
-\title{Title}
+\title{Global irradiance on Mars horizontal surface}
 \usage{
 G_h(
   Ls,
@@ -15,23 +15,24 @@ G_h(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 }
 \value{
-
+Global irradiance [W/m²]
 }
 \description{
-Title
+Calculates the total solar irradiance (direct beam + diffuse + albedo) incident on a
+horizontal surface on Mars. Implements Equation 17 from Appelbaum & Flood (1990).
 }

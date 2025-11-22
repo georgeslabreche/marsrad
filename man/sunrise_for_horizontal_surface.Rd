@@ -2,18 +2,19 @@
 % Please edit documentation in R/sunrise.R
 \name{sunrise_for_horizontal_surface}
 \alias{sunrise_for_horizontal_surface}
-\title{Title}
+\title{Sunrise for horizontal surface}
 \usage{
 sunrise_for_horizontal_surface(phi, delta)
 }
 \arguments{
-\item{phi}{}
+\item{phi}{Planetary latitude [rad]}
 
-\item{delta}{}
+\item{delta}{Solar declination angle [rad]}
 }
 \value{
-
+Sunrise hour angle [rad]
 }
 \description{
-Title
+Calculates sunrise hour angle for a horizontal surface.
+Implements Equation 8 from Appelbaum (1993).
 }
