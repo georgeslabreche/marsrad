@@ -112,12 +112,78 @@ print(paste("Sunrise:", round(sunrise_time, 2), "hours"))
 print(paste("Sunset:", round(sunset_time, 2), "hours"))
 ```
 
+## Environment Variables
+
+The package can be configured via environment variables to control calculation methods and behavior:
+
+### NET_FLUX_FUNCTION_TYPE
+
+Controls which implementation of the normalized net flux function to use. Affects all radiation calculations.
+
+**Options:**
+
+- `"polynomial"` (default) - Analytical polynomial expression
+  - Mean error: ~0.7%
+  - Maximum error: ~7% at zenith angles 80-85° and optical depth > 5
+  - Works with any albedo value
+  - Recommended for most use cases
+- `"lookup_v1"` - Lookup table from NASA TM-102299 (Appelbaum & Flood, 1989)
+  - Albedo fixed at 0.1
+  - Exact values from original tables
+- `"lookup_v2"` - Lookup table from NASA TM-103623 (Appelbaum & Flood, 1990)
+  - Supports albedo 0.1 and 0.4
+  - Exact values from updated tables
+
+**Usage:**
+```r
+# Use polynomial implementation (default)
+Sys.setenv(NET_FLUX_FUNCTION_TYPE = "polynomial")
+
+# Use lookup table v2
+Sys.setenv(NET_FLUX_FUNCTION_TYPE = "lookup_v2")
+```
+
+### NET_FLUX_FUNCTION_SHOW_WARNINGS
+
+Controls whether to display warnings about potential calculation errors.
+
+**Options:**
+
+- `TRUE` (default) - Show warnings when polynomial calculations may have notable error margin
+- `FALSE` - Suppress warnings
+
+Warnings are shown when:
+
+- Optical depth tau > 5
+- Zenith angle z >= 80°
+
+**Usage:**
+
+```r
+# Show warnings (default)
+Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)
+
+# Suppress warnings
+Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = FALSE)
+```
+
+### TAU_FACTOR_THRESHOLD_CLEAR_DAY
+
+Threshold for atmospheric optical depth to classify a day as "clear". Used internally by optimal angle calculations.
+
+**Default:** `0.5`
+
+**Usage:**
+```r
+# Set clear day threshold
+Sys.setenv(TAU_FACTOR_THRESHOLD_CLEAR_DAY = 0.5)
+```
+
 ## Development
 
 ### Running Tests
 
 To run the package tests during development:
-
 ```r
 # Install devtools if you haven't already
 install.packages("devtools")

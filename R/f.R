@@ -227,6 +227,22 @@ f_analytical = function(z, tau, al=0.1){
 #' @param tau Atmospheric optical depth (dimensionless)
 #' @param al Surface albedo (dimensionless, ranges from 0.1 to 0.4)
 #'
+#' @section Environment Variables:
+#' The function behavior can be configured via environment variables:
+#'
+#' **NET_FLUX_FUNCTION_TYPE**: Controls which implementation to use:
+#' - `"polynomial"` (default) - Analytical polynomial expression with ~0.7% mean error.
+#'   Maximum error ~7% at zenith angles 80-85° and tau > 5.
+#' - `"lookup_v1"` - Lookup table from NASA TM-102299. Albedo fixed at 0.1.
+#' - `"lookup_v2"` - Lookup table from NASA TM-103623. Supports albedo 0.1 and 0.4.
+#'
+#' Set with: `Sys.setenv(NET_FLUX_FUNCTION_TYPE = "polynomial")`
+#'
+#' **NET_FLUX_FUNCTION_SHOW_WARNINGS**: Controls warning display (TRUE/FALSE, default: TRUE).
+#' Warnings are shown when polynomial calculations may have notable error margin (tau > 5 or z >= 80°).
+#'
+#' Set with: `Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)`
+#'
 #' @return Normalized net flux (dimensionless)
 #' @export
 f = function(z, tau, al=0.1){
