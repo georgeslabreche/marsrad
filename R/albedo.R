@@ -9,8 +9,8 @@
 #' Calculate the albedo value given geographical location and tau factor.
 #' Source: Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).  Solar radiation on Mars — Update 1991.
 #'
-#' @param latitude Planetary latitude [deg], from -90\u00b0 to +90\u00b0
-#' @param longitude Planetary longitude [deg], from -180\u00b0 to 180\u00b0
+#' @param latitude Planetary latitude [deg], from -90° to +90°
+#' @param longitude Planetary longitude [deg], from -180° to 180°
 #' @param tau Atmospheric optical depth (dimensionless)
 #' @param coordinates_rounding Logical, whether to round coordinates to nearest grid point
 #'

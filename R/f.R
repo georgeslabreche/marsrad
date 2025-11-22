@@ -166,8 +166,8 @@ f_lookup_v2 = function(z, tau, al=0.1){
 
 #' The analytical expression of the normalized net flux function.
 #'
-#' The mean error is about 0.7 percent for the full range. For zenith angles up to 40\u00b0 the error is much smaller.
-#' The largest error is for zenith angle of 80\u00b0 and 85\u00b0 and for tau greater than 5. The maximum error is about 7 percent.
+#' The mean error is about 0.7 percent for the full range. For zenith angles up to 40° the error is much smaller.
+#' The largest error is for zenith angle of 80° and 85° and for tau greater than 5. The maximum error is about 7 percent.
 #' At these large angles and opacities, the error has a minor effect on the calculated daily insolations.
 #'
 #' Source: Equation 20? in Appelbaum, Joseph & Flood, Dennis (1990) - Update 1990.
@@ -233,7 +233,7 @@ f_analytical = function(z, tau, al=0.1){
 #' \strong{NET_FLUX_FUNCTION_TYPE}: Controls which implementation to use:
 #' \itemize{
 #'   \item \code{"polynomial"} (default) - Analytical polynomial expression with ~0.7\% mean error.
-#'         Maximum error ~7\% at zenith angles 80-85\u00b0 and tau > 5.
+#'         Maximum error ~7\% at zenith angles 80-85° and tau > 5.
 #'   \item \code{"lookup_v1"} - Lookup table from NASA TM-102299. Albedo fixed at 0.1.
 #'   \item \code{"lookup_v2"} - Lookup table from NASA TM-103623. Supports albedo 0.1 and 0.4.
 #' }
@@ -241,7 +241,7 @@ f_analytical = function(z, tau, al=0.1){
 #' Set with: \code{Sys.setenv(NET_FLUX_FUNCTION_TYPE = "polynomial")}
 #'
 #' \strong{NET_FLUX_FUNCTION_SHOW_WARNINGS}: Controls warning display (TRUE/FALSE, default: TRUE).
-#' Warnings are shown when polynomial calculations may have notable error margin (tau > 5 or z >= 80\u00b0).
+#' Warnings are shown when polynomial calculations may have notable error margin (tau > 5 or z >= 80°).
 #'
 #' Set with: \code{Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)}
 #'

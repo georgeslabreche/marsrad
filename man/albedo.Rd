@@ -7,9 +7,9 @@
 albedo(latitude, longitude, tau, coordinates_rounding = TRUE)
 }
 \arguments{
-\item{latitude}{Planetary latitude [deg], from -90\u00b0 to +90\u00b0}
+\item{latitude}{Planetary latitude [deg], from -90° to +90°}
 
-\item{longitude}{Planetary longitude [deg], from -180\u00b0 to 180\u00b0}
+\item{longitude}{Planetary longitude [deg], from -180° to 180°}
 
 \item{tau}{Atmospheric optical depth (dimensionless)}
 
