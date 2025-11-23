@@ -50,6 +50,9 @@ jobs:
 
           # Get per-file coverage by parsing print output (it uses messages, not stdout)
           cov_output <- capture.output(print(coverage), type = "message")
+          # Strip ANSI color codes (e.g., \033[31m for red, \033[32m for green)
+          # \033 is the ESC character (ASCII 27) that starts ANSI escape sequences
+          cov_output <- gsub("\033\\[[0-9;]*m", "", cov_output)
           file_lines <- grep("R/.*\\.R:", cov_output, value = TRUE)
 
           for (line in file_lines) {
