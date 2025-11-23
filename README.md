@@ -136,9 +136,13 @@ Controls which implementation of the normalized net flux function to use. Affect
 - `"lookup_v1"` - Lookup table from NASA TM-102299 (Appelbaum & Flood, 1989)
   - Albedo fixed at 0.1
   - Exact values from original tables
+  - Only works with discrete zenith angles: 0°, 10°, 20°, 30°, 40°, 50°, 60°, 70°, 80°, 85°
+  - Not recommended for calculations with arbitrary zenith angles from `Z()`
 - `"lookup_v2"` - Lookup table from NASA TM-103623 (Appelbaum & Flood, 1990)
   - Supports albedo 0.1 and 0.4
   - Exact values from updated tables
+  - Only works with discrete zenith angles: 0°, 5°, 10°, 15°, ..., 80°, 85°
+  - Not recommended for calculations with arbitrary zenith angles from `Z()`
 
 **Usage:**
 ```r
