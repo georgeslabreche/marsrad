@@ -111,9 +111,9 @@ print(paste("Inclined surface irradiance:", round(Gi, 2), "W/m²"))
 optimal <- optimal_angle(Ls = Ls, phi = phi)
 print(paste("Optimal tilt angle:", round(optimal, 2), "radians"))
 
-# Calculate sunrise and sunset times
-sunrise_time <- sunrise(Ls = Ls, phi = phi)
-sunset_time <- sunset(Ls = Ls, phi = phi)
+# Calculate sunrise and sunset times (in solar hours, 0-24)
+sunrise_time <- sunrise(Ls = Ls, phi = phi, unit = 3)
+sunset_time <- sunset(Ls = Ls, phi = phi, unit = 3)
 print(paste("Sunrise:", round(sunrise_time, 2), "hours"))
 print(paste("Sunset:", round(sunset_time, 2), "hours"))
 ```
