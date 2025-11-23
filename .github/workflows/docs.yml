@@ -1,0 +1,31 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build documentation image
+        run: |
+          docker build --platform linux/amd64 -t mars-docs -f Dockerfile-docs .
+
+      - name: Generate PDF documentation
+        run: |
+          rm -f docs/mars-manual.pdf
+          docker run --rm --platform linux/amd64 -v $(pwd)/docs:/output mars-docs
+
+      - name: Upload PDF documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: mars-manual-pdf
+          path: docs/mars-manual.pdf
+          if-no-files-found: error
