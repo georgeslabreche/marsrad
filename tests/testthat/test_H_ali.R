@@ -64,10 +64,10 @@ test_that("H_ali: Albedo daily insolation on an optimal inclined angle beta = 22
 
   # Tolerance.
   tolerance = 0.09
-  
+
   # Test input parameters.
   Ls_seq = seq(0, 355, 5) # Areocentric longitude.
-  
+
   # Expect equals all calculations against all expected.
   test_daily_insolation_on_inclined_surface(
     spacecraft = "VL2",
@@ -76,6 +76,17 @@ test_that("H_ali: Albedo daily insolation on an optimal inclined angle beta = 22
     Ls_seq = Ls_seq,
     beta_equals_phi = FALSE,
     verbose = FALSE)
+})
+
+test_that("H_ali: gamma_c validation", {
+  # Test invalid gamma_c values (out of -180 to 180 range)
+  expect_error(
+    H_ali(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, beta = 25, gamma_c = 181)
+  )
+
+  expect_error(
+    H_ali(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, beta = 25, gamma_c = -181)
+  )
 })
 
 

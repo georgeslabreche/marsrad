@@ -76,3 +76,14 @@ test_that("H_bi: Beam daily insolation on optimal inclined surface for beta = 22
     beta_equals_phi = FALSE,
     verbose = FALSE)
 })
+
+test_that("H_bi: gamma_c validation", {
+  # Test invalid gamma_c values (out of -180 to 180 range)
+  expect_error(
+    H_bi(Ls = 90, phi = 22.48, tau = 0.5, beta = 25, gamma_c = 181)
+  )
+
+  expect_error(
+    H_bi(Ls = 90, phi = 22.48, tau = 0.5, beta = 25, gamma_c = -181)
+  )
+})
