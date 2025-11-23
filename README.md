@@ -108,8 +108,8 @@ Gi <- G_i(Ls = Ls, phi = phi, longitude = longitude, Ts = Ts,
 print(paste("Inclined surface irradiance:", round(Gi, 2), "W/m²"))
 
 # Find optimal tilt angle for maximum daily insolation
-optimal <- optimal_angle(Ls = Ls, phi = phi, tau = tau, al = al)
-print(paste("Optimal tilt angle:", round(optimal, 2), "degrees"))
+optimal <- optimal_angle(Ls = Ls, phi = phi)
+print(paste("Optimal tilt angle:", round(optimal, 2), "radians"))
 
 # Calculate sunrise and sunset times
 sunrise_time <- sunrise(Ls = Ls, phi = phi)
