@@ -3,6 +3,7 @@ name: Generate Documentation
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   generate-pdf:
