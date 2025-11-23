@@ -15,8 +15,9 @@
 #' @return Diffuse irradiance on inclined surface [W/m²]
 #' @export
 G_di = function(Ls, phi, longitude, Ts, z=Z(Ls=Ls,  phi=phi, Ts=Ts), tau, al=albedo(latitude=phi, longitude=longitude, tau=tau), beta){
-  
-  Gdi = G_dh(Ls=Ls, phi=phi, longitude=longitude, z=z, tau=tau, al=al) * cos((beta*pi/180) / 2)^2
+
+  # Pass Ts along with phi to avoid parameter mismatch warnings
+  Gdi = G_dh(Ls=Ls, phi=phi, longitude=longitude, Ts=Ts, z=z, tau=tau, al=al) * cos((beta*pi/180) / 2)^2
   
   # If negative then interpret as no direct irradiance hitting the inclined surface.
   # TODO: Check if negative value is actually possible.

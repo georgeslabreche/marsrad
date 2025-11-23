@@ -31,10 +31,12 @@ G_i = function(Ls, phi, longitude, Ts, z=Z(Ls=Ls, phi=phi, Ts=Ts), tau, al=albed
   if(gamma_c > 180 || gamma_c < -180){
     stop("Surface azimuth angle gamma_c must between -180\u00b0 and +180\u00b0 with zero facing the equator, east negative, and west positive.")
   }
-  
-  a = G_bi(Ls=Ls, phi=phi, Ts=Ts, z=Z(Ls=Ls, phi=phi, Ts=Ts), tau=tau, beta=beta, gamma_c=gamma_c)
-  b = G_di(Ls=Ls, phi=phi, longitude=longitude, Ts=Ts, z=Z(Ls=Ls, phi=phi, Ts=Ts), tau=tau, al=al, beta=beta)
-  c = G_ali(Ls=Ls, phi=phi, longitude=longitude, Ts=Ts, z=Z(Ls=Ls, phi=phi, Ts=Ts), tau=tau, al=al, beta=beta)
+
+  # Use the z parameter (either provided by user or calculated from default).
+  # Reuse the same z value for all components to avoid redundant calculations.
+  a = G_bi(Ls=Ls, phi=phi, Ts=Ts, z=z, tau=tau, beta=beta, gamma_c=gamma_c)
+  b = G_di(Ls=Ls, phi=phi, longitude=longitude, Ts=Ts, z=z, tau=tau, al=al, beta=beta)
+  c = G_ali(Ls=Ls, phi=phi, longitude=longitude, Ts=Ts, z=z, tau=tau, al=al, beta=beta)
   
   Gi = a + b + c
   
