@@ -4,7 +4,7 @@
 
 ## Overview
 
-An R package to calculate solar irradiance (instantaneous power) and insolation (energy over time) on the Martian surface for both horizontal and inclined surfaces. This package is essential in designing solar power systems for Mars missions and mission planning. Based on NASA Technical Memorandums 102299, 103623, 105216, 106321, and 106700, i.e. the canonical Mars solar radiation papers.
+An R package to calculate solar irradiance (instantaneous power) and insolation (energy over time) on the Martian surface for both horizontal and inclined surfaces. This package is essential in designing solar power systems for Mars missions and mission planning. Based on NASA Technical Memoranda 102299, 103623, 105216, 106321, and 106700, i.e. the canonical Mars solar radiation papers.
 
 ## Citation
 
@@ -85,7 +85,7 @@ library(mars)
 # Example: Mars surface at Viking Lander 1 site during northern summer
 Ls <- 120           # Areocentric longitude (degrees)
 phi <- 22.3         # Latitude (degrees) - VL1 location
-longitude <- 0      # Longitude (degrees)
+longitude <- -48    # Longitude (degrees) - VL1 at 48°W
 Ts <- 12            # Solar time (hours) - noon
 tau <- 0.4          # Atmospheric optical depth
 al <- 0.1           # Albedo
@@ -95,7 +95,7 @@ Gh <- G_h(Ls = Ls, phi = phi, longitude = longitude, Ts = Ts, tau = tau, al = al
 print(paste("Global irradiance:", round(Gh, 2), "W/m²"))
 
 # Daily insolation on horizontal surface (Wh/m²-day)
-Hh <- H_h(Ls = Ls, phi = phi, tau = tau, al = al)
+Hh <- H_h(Ls = Ls, phi = phi, longitude = longitude, tau = tau, al = al)
 print(paste("Daily insolation:", round(Hh, 2), "Wh/m²-day"))
 
 # Calculate for an inclined surface (e.g., tilted solar panel)

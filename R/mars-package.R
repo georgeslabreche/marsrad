@@ -2,7 +2,7 @@
 #'
 #' @description
 #' A set of functions to calculate solar irradiance and insolation on Mars horizontal
-#' and inclined surfaces. Based on NASA Technical Memorandums 102299, 103623, 105216,
+#' and inclined surfaces. Based on NASA Technical Memoranda 102299, 103623, 105216,
 #' 106321, and 106700, i.e. the canonical Mars solar radiation papers.
 #'
 #' @details
