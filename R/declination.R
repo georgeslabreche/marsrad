@@ -1,18 +1,17 @@
 # Mars obliquity of rotation axis [deg].
 delta_0 = 24.936
 
-#' Declination angle: the angular position of the Sun at solar noon with respect to the plane of the equator.
+#' Solar declination angle on Mars
 #'
-#' For Mars: -24.936° <= delta <= 24.936°.
-#' 0 deg at vernal (Ls 0°) and autumnal equinoxes (Ls 180°)
-#' +24.936 deg at summer solstice (Ls 90) and -24.936 at at winter solstice (Ls 270°).
-#' 
-#' Source: Equation 7 (1990)
-#' 
-#' @param Ls Areocentric longitude [deg].
-#' @param unit 
+#' Calculates the angular position of the Sun at solar noon with respect to the plane of the
+#' Martian equator. For Mars: -24.936° <= delta <= 24.936°. The declination is 0° at vernal
+#' (Ls=0°) and autumnal equinoxes (Ls=180°), +24.936° at summer solstice (Ls=90°), and -24.936°
+#' at winter solstice (Ls=270°). Implements Equation 7 from Appelbaum & Flood (1990).
 #'
-#' @return Declination angle in radians or degrees.
+#' @param Ls Areocentric longitude [deg]
+#' @param unit Output unit: 1 for radians, 2 for degrees (default: 1)
+#'
+#' @return Declination angle [rad] or [deg] depending on unit parameter
 #' @export
 declination = function(Ls, unit=1){
 

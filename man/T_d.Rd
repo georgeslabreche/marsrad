@@ -2,18 +2,19 @@
 % Please edit documentation in R/T_d.R
 \name{T_d}
 \alias{T_d}
-\title{The number of Mars daylight hours.}
+\title{Number of Mars daylight hours}
 \usage{
 T_d(Ls, phi)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 }
 \value{
-
+Number of daylight hours [h]
 }
 \description{
-The number of Mars daylight hours.
+Calculates the duration of daylight (time between sunrise and sunset) for a given
+location and season on Mars. Implements Equation 10 from Appelbaum & Flood (1990).
 }

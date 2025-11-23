@@ -1,9 +1,12 @@
-#' Title
+#' Check if location is experiencing polar day
 #'
-#' @param Ls 
-#' @param phi 
+#' Determines whether a given location on Mars is experiencing polar day (24-hour sunlight)
+#' for the specified season. During polar day, the sun remains above the horizon continuously.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#'
+#' @return TRUE if experiencing polar day, FALSE otherwise
 #' @export
 is_polar_day = function(Ls, phi){
   

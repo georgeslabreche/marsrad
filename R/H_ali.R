@@ -1,15 +1,18 @@
 
-#' Title
+#' Albedo-reflected daily insolation on Mars inclined surface
 #'
-#' @param Ls 
-#' @param phi 
-#' @param longitude 
-#' @param tau 
-#' @param al 
-#' @param beta 
-#' @param gamma_c
+#' Calculates the ground-reflected solar energy received over a full Martian day on an inclined
+#' surface. Obtained by integrating albedo-reflected irradiance from sunrise to sunset.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param longitude Planetary longitude [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param al Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau
+#' @param beta Surface tilt/slope angle from horizontal [deg]
+#' @param gamma_c Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)
+#'
+#' @return Albedo-reflected daily insolation on inclined surface [Wh/m²-day]
 #' @export
 H_ali = function(Ls, phi, longitude, tau, al=albedo(latitude=phi, longitude=longitude, tau=tau), beta, gamma_c){
   

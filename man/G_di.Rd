@@ -2,7 +2,7 @@
 % Please edit documentation in R/G_di.R
 \name{G_di}
 \alias{G_di}
-\title{Title}
+\title{Diffuse irradiance on Mars inclined surface}
 \usage{
 G_di(
   Ls,
@@ -16,25 +16,26 @@ G_di(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 }
 \value{
-
+Diffuse irradiance on inclined surface [W/m²]
 }
 \description{
-Title
+Calculates the diffuse solar irradiance (scattered by atmospheric dust) incident on an
+inclined surface on Mars. Accounts for the view factor of the sky from the tilted surface.
 }

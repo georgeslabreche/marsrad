@@ -1,17 +1,25 @@
 Package: mars
 Title: Mars Solar Radiation
-Version: 0.26
+Version: 1.0.0
 Authors@R: 
     person(given = "Georges",
-           family = "Labreche",
+           family = "Labrèche",
            role = c("aut", "cre"),
-           email = "georges@opendatakosovo.org",
-           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
-Description: A set of functions to calculate solar irradiance and insolation on Mars horizontal and inclined surfaces.
-License: What license it uses
+           email = "georges@tanagraspace.com",
+           comment = structure("0000-0002-2104-8789", .Names = "ORCID"))
+Description: A set of functions to calculate solar irradiance and insolation on Mars horizontal and inclined surfaces. Based on NASA Technical Memoranda 102299, 103623, 105216, 106321, and 106700, i.e. the canonical Mars solar radiation papers.
+License: GPL-3
+URL: https://github.com/georgeslabreche/mars
+BugReports: https://github.com/georgeslabreche/mars/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.0
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 2.10)
+Imports:
+    stats
 Suggests:
     testthat,
-    covr
+    covr,
+    DT,
+    htmltools

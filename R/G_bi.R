@@ -1,3 +1,5 @@
+# FIXME: Update this function so that it figures out if its a polar night or day.
+
 # Equation 3 (1994): Global irradiance on Mars inclined surface [W/m2].
 #
 # Based on equations presented in the following publication:
@@ -6,19 +8,22 @@
 #   Journal of Propulsion and Power. 12. 10.2514/3.24044 
 #   https://ntrs.nasa.gov/?R=19950004977
 
-# FIXME: Update this function so that it figures out if its a polar night or day.
 
-#' Title
+#' Direct beam irradiance on Mars inclined surface
 #'
-#' @param Ls 
-#' @param phi 
-#' @param Ts 
-#' @param z 
-#' @param tau 
-#' @param beta 
-#' @param gamma_c
+#' Calculates the direct beam solar irradiance incident on an inclined surface on Mars.
+#' Accounts for the sun's angle of incidence on the tilted and oriented surface. Based on
+#' Appelbaum, Flood & Norambuena (1994).
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param Ts Solar time [h]
+#' @param z Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param beta Surface tilt/slope angle from horizontal [deg]
+#' @param gamma_c Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)
+#'
+#' @return Direct beam irradiance on inclined surface [W/m²]
 #' @export
 G_bi = function(Ls, phi, Ts, z=Z(Ls=Ls, phi=phi, Ts=Ts), tau, beta, gamma_c){
   

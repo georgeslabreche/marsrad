@@ -2,7 +2,7 @@
 % Please edit documentation in R/I_dh.R
 \name{I_dh}
 \alias{I_dh}
-\title{Title}
+\title{Diffuse insolation on Mars horizontal surface over time period}
 \usage{
 I_dh(
   Ls,
@@ -15,21 +15,24 @@ I_dh(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{tau}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{Ts_start}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{Ts_end}{}
+\item{Ts_start}{Start of integration period [h]}
 
-\item{al}{}
+\item{Ts_end}{End of integration period [h]}
+
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 }
 \value{
-
+Diffuse insolation over specified time period [Wh/m²]
 }
 \description{
-Title
+Calculates the diffuse solar energy (scattered by atmospheric dust) received on a horizontal
+surface between specified start and end times. Computed as difference between global and beam insolation.
 }

@@ -2,20 +2,27 @@
 % Please edit documentation in R/optical_depth.R
 \name{optical_depth}
 \alias{optical_depth}
-\title{Title}
+\title{Atmospheric optical depth on Mars}
 \usage{
 optical_depth(Ls, phi, model = 1)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{model}{}
+\item{model}{Dust storm model (1 or 2). Model 1 assumes both storms originated at -30° latitude.
+Model 2 assumes storms at -30° (Ls=215°) and -10° (Ls=295°)}
 }
 \value{
-
+Atmospheric optical depth (dimensionless, minimum 0.5)
 }
 \description{
-Title
+Calculates the optical depth of the Martian atmosphere as a function of latitude and season.
+The optical depth varies spatially and temporally, with peaks during global dust storms.
+Implements Equations 1 and 2 from Appelbaum, Landis & Sherman (1991).
+}
+\examples{
+# Calculate optical depth at Viking Lander 1 site during dust storm season
+tau <- optical_depth(Ls = 215, phi = 22.3, model = 1)
 }

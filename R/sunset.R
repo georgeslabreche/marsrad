@@ -1,13 +1,15 @@
-# FIXME: 
-#   1. Bad logic when gamma_c = 0 and Beta > 0.
+# FIXME: Bad logic when gamma_c = 0 and Beta > 0.
 
-#' Get the moment in which the sunset occurs.
+#' Sunset for horizontal surface
 #'
-#' @param phi 
-#' @param delta 
+#' Calculates sunset hour angle for a horizontal surface.
+#' Implements Equation 9 from Appelbaum (1993).
 #'
-#' @return
-#' @export
+#' @param phi Planetary latitude [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunset hour angle [rad]
+#' @noRd
 sunset_for_horizontal_surface = function(phi, delta){
 
   # (9) in (1993): Sunset hour angle [rad].
@@ -17,18 +19,19 @@ sunset_for_horizontal_surface = function(phi, delta){
 }
 
 
-# Angles in rad.
-# TODO: Make this a hidden function.
 # FIXME: Doesn't work for all cases, see Ls = 300, phi = 20, and beta = 45.
-#
-#' (31) in (1993).
+
+#' Sunset for inclined surface oriented toward equator
 #'
-#' @param phi 
-#' @param beta 
-#' @param delta 
+#' Calculates sunset hour angle for an inclined surface facing the equator.
+#' Implements Equation 31 from Appelbaum (1993).
 #'
-#' @return
-#' @export
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface tilt angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunset hour angle [rad]
+#' @noRd
 sunset_for_inclined_surface_oriented_equator = function(phi, beta, delta){
 
   # (9) in (1993).
@@ -47,17 +50,19 @@ sunset_for_inclined_surface_oriented_equator = function(phi, beta, delta){
 }
 
 # (16) from (1993).
-# Angles in rad.
-# TODO: Make this a hidden function.
-#' Title
+
+#' Sunset for inclined surface oriented eastward
 #'
-#' @param phi 
-#' @param beta 
-#' @param gamma_c 
-#' @param delta 
+#' Calculates sunset hour angle for an inclined surface facing east.
+#' Implements Equation 16 from Appelbaum (1993).
 #'
-#' @return
-#' @export
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface tilt angle [rad]
+#' @param gamma_c Surface azimuth angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunset hour angle [rad], or NA if sun never sets on this surface
+#' @noRd
 sunset_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta){
 
   omega_rad_1 = sunset_for_horizontal_surface(phi=phi, delta=delta)
@@ -85,17 +90,19 @@ sunset_for_inclined_surface_oriented_east = function(phi, beta, gamma_c, delta){
 }
 
 # (18) from (1993).
-# Angles in rad.
-# TODO: Make this a hidden function.
-#' Title
+
+#' Sunset for inclined surface oriented westward
 #'
-#' @param phi 
-#' @param beta 
-#' @param gamma_c 
-#' @param delta 
+#' Calculates sunset hour angle for an inclined surface facing west.
+#' Implements Equation 18 from Appelbaum (1993).
 #'
-#' @return
-#' @export
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface tilt angle [rad]
+#' @param gamma_c Surface azimuth angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunset hour angle [rad], or NA if sun never sets on this surface
+#' @noRd
 sunset_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta){
 
   omega_rad_1 = sunset_for_horizontal_surface(phi=phi, delta=delta)
@@ -122,17 +129,18 @@ sunset_for_inclined_surface_oriented_west = function(phi, beta, gamma_c, delta){
   return(omega_rad)
 }
 
-# Angles in rad.
-# TODO: Make this a hidden function.
-#' Title
+#' Sunset for inclined surface (general)
 #'
-#' @param phi 
-#' @param beta 
-#' @param gamma_c 
-#' @param delta 
+#' Calculates sunset hour angle for an inclined surface with any orientation.
+#' Dispatches to specific orientation functions based on gamma_c value.
 #'
-#' @return
-#' @export
+#' @param phi Planetary latitude [rad]
+#' @param beta Surface tilt angle [rad]
+#' @param gamma_c Surface azimuth angle [rad]
+#' @param delta Solar declination angle [rad]
+#'
+#' @return Sunset hour angle [rad]
+#' @noRd
 sunset_for_inclined_surface = function(phi, beta, gamma_c, delta){
 
   # Inclination angle is 0 degrees, this is equivalent to a horizontal surface.
@@ -163,22 +171,19 @@ sunset_for_inclined_surface = function(phi, beta, gamma_c, delta){
   return(omega_rad)
 }
 
-# The function.
-#   Ls    - Areocentric longitude.
-#   phi   - Planetary latitude.
-#   unit  - Unit to return:
-#           - 1 for radians.
-#           - 2 for degrees.
-#           - 3 for solar hour.
-#' Title
+
+#' Sunset time on Mars
 #'
-#' @param Ls 
-#' @param phi 
-#' @param beta 
-#' @param gamma_c 
-#' @param unit 
+#' Calculates the sunset time for a horizontal or inclined surface on Mars.
+#' Returns NA during polar night/day periods.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param beta Surface tilt angle [deg]. Optional, for inclined surfaces
+#' @param gamma_c Surface azimuth angle [deg]. Optional, for inclined surfaces. Zero facing equator, east negative, west positive (-180 to +180)
+#' @param unit Output unit: 1 for radians, 2 for degrees, 3 for solar hours (default: 1)
+#'
+#' @return Sunset time [rad], [deg], or [h] depending on unit parameter, or NA during polar night/day
 #' @export
 sunset = function(Ls, phi, beta=NULL, gamma_c=NULL, unit=1){
   

@@ -2,20 +2,22 @@
 % Please edit documentation in R/Z.R
 \name{Z}
 \alias{Z}
-\title{Equation 6: Zenith angle of the incident solar radiation [deg].}
+\title{Solar zenith angle}
 \usage{
 Z(Ls, phi, Ts)
 }
 \arguments{
-\item{Ls}{Areocentric longitude [deg].}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{Planetary latitude [deg].}
+\item{phi}{Planetary latitude [deg]}
 
 \item{Ts}{Solar time [h]}
 }
 \value{
-
+Sun zenith angle [deg]
 }
 \description{
-Source: Equation 6 in Appelbaum, Joseph & Flood, Dennis. (1990).
+Calculates the angle between the sun's rays and the vertical (zenith) direction.
+A zenith angle of 0° means the sun is directly overhead, while 90° means the sun
+is at the horizon. Implements Equation 6 from Appelbaum & Flood (1990).
 }

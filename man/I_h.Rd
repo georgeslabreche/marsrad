@@ -2,7 +2,7 @@
 % Please edit documentation in R/I_h.R
 \name{I_h}
 \alias{I_h}
-\title{Title}
+\title{Global insolation on Mars horizontal surface over time period}
 \usage{
 I_h(
   Ls,
@@ -15,23 +15,24 @@ I_h(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{Ts_start}{}
+\item{Ts_start}{Start of integration period [h]}
 
-\item{Ts_end}{}
+\item{Ts_end}{End of integration period [h]}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 }
 \value{
-
+Global insolation over specified time period [Wh/m²]
 }
 \description{
-Title
+Calculates the total solar energy received on a horizontal surface between specified start
+and end times. Obtained by integrating global irradiance over the time period.
 }

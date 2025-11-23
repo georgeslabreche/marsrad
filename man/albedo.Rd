@@ -7,23 +7,18 @@
 albedo(latitude, longitude, tau, coordinates_rounding = TRUE)
 }
 \arguments{
-\item{latitude}{Planetary latitude, from -90° to io +90°.}
+\item{latitude}{Planetary latitude [deg], from -90° to +90°}
 
-\item{longitude}{Planetary longitude, from -180° to 180°.}
+\item{longitude}{Planetary longitude [deg], from -180° to 180°}
 
-\item{tau}{Optical depth.}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{coordinates_rounding}{}
+\item{coordinates_rounding}{Logical, whether to round coordinates to nearest grid point}
 }
 \value{
-
+Surface albedo value (dimensionless, 0-1)
 }
 \description{
 Calculate the albedo value given geographical location and tau factor.
-}
-\details{
-Source: Table I - The albedo function.
-  Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).
-  Solar radiation on Mars — Update 1991. Solar Energy. 50. 35-51. 10.1016/0038-092X(93)90006-A:
-  https://www.researchgate.net/publication/223850868_Solar_radiation_on_Mars-Update_1991
+Source: Appelbaum, Joseph & Landis, Geoffrey & Sherman, I. (1991).  Solar radiation on Mars — Update 1991.
 }

@@ -2,24 +2,25 @@
 % Please edit documentation in R/I_bh.R
 \name{I_bh}
 \alias{I_bh}
-\title{Title}
+\title{Beam insolation on Mars horizontal surface over time period}
 \usage{
 I_bh(Ls, phi, tau, Ts_start, Ts_end)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{Ts_start}{}
+\item{Ts_start}{Start of integration period [h]}
 
-\item{Ts_end}{}
+\item{Ts_end}{End of integration period [h]}
 }
 \value{
-
+Beam insolation over specified time period [Wh/m²]
 }
 \description{
-Title
+Calculates the direct beam solar energy received on a horizontal surface between specified
+start and end times. Implements Equation 19 from Appelbaum & Flood (1990).
 }

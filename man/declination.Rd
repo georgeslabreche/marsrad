@@ -2,23 +2,21 @@
 % Please edit documentation in R/declination.R
 \name{declination}
 \alias{declination}
-\title{Declination angle: the angular position of the Sun at solar noon with respect to the plane of the equator.}
+\title{Solar declination angle on Mars}
 \usage{
 declination(Ls, unit = 1)
 }
 \arguments{
-\item{Ls}{Areocentric longitude [deg].}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{unit}{}
+\item{unit}{Output unit: 1 for radians, 2 for degrees (default: 1)}
 }
 \value{
-Declination angle in radians or degrees.
+Declination angle [rad] or [deg] depending on unit parameter
 }
 \description{
-For Mars: -24.936° <= delta <= 24.936°.
-0 deg at vernal (Ls 0°) and autumnal equinoxes (Ls 180°)
-+24.936 deg at summer solstice (Ls 90) and -24.936 at at winter solstice (Ls 270°).
-}
-\details{
-Source: Equation 7 (1990)
+Calculates the angular position of the Sun at solar noon with respect to the plane of the
+Martian equator. For Mars: -24.936° <= delta <= 24.936°. The declination is 0° at vernal
+(Ls=0°) and autumnal equinoxes (Ls=180°), +24.936° at summer solstice (Ls=90°), and -24.936°
+at winter solstice (Ls=270°). Implements Equation 7 from Appelbaum & Flood (1990).
 }

@@ -2,18 +2,19 @@
 % Please edit documentation in R/is_polar_night.R
 \name{is_polar_night}
 \alias{is_polar_night}
-\title{Title}
+\title{Check if location is experiencing polar night}
 \usage{
 is_polar_night(Ls, phi)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 }
 \value{
-
+TRUE if experiencing polar night, FALSE otherwise
 }
 \description{
-Title
+Determines whether a given location on Mars is experiencing polar night (24-hour darkness)
+for the specified season. During polar night, the sun remains below the horizon continuously.
 }

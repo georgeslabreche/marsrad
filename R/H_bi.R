@@ -1,13 +1,16 @@
 
-#' Title
+#' Beam daily insolation on Mars inclined surface
 #'
-#' @param Ls 
-#' @param phi 
-#' @param tau 
-#' @param beta 
-#' @param gamma_c
+#' Calculates the direct beam solar energy received over a full Martian day on an inclined surface.
+#' Obtained by integrating beam irradiance from sunrise to sunset.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param tau Atmospheric optical depth (dimensionless)
+#' @param beta Surface tilt/slope angle from horizontal [deg]
+#' @param gamma_c Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)
+#'
+#' @return Beam daily insolation on inclined surface [Wh/m²-day]
 #' @export
 H_bi = function(Ls, phi, tau, beta, gamma_c){
   

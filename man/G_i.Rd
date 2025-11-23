@@ -2,7 +2,7 @@
 % Please edit documentation in R/G_i.R
 \name{G_i}
 \alias{G_i}
-\title{Title}
+\title{Global irradiance on Mars inclined surface}
 \usage{
 G_i(
   Ls,
@@ -17,27 +17,28 @@ G_i(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)}
 }
 \value{
-
+Global irradiance on inclined surface [W/m²]
 }
 \description{
-Title
+Calculates the total solar irradiance (direct beam + diffuse + albedo-reflected) incident
+on an inclined surface on Mars. Implements Equation 3 from Appelbaum, Flood & Norambuena (1994).
 }

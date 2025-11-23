@@ -50,3 +50,19 @@ test_that("G_h: Global irradiance on Mars horizontal surface with different norm
     }
   }
 })
+
+test_that("G_h: Non-irradiated cases return zero", {
+  # Test parameters
+  Ls = 90
+  phi = 22.48
+  longitude = -48
+  tau = 0.5
+
+  # Test nighttime (not irradiated) - should return 0
+  result_night = G_h(Ls = Ls, phi = phi, longitude = longitude, Ts = 0, tau = tau)
+  expect_equal(result_night, 0)
+
+  # Test with sun below horizon (z >= 90)
+  result_below = G_h(Ls = Ls, phi = phi, longitude = longitude, z = 95, tau = tau)
+  expect_equal(result_below, 0)
+})

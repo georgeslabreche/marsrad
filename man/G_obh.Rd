@@ -2,22 +2,23 @@
 % Please edit documentation in R/G_obh.R
 \name{G_obh}
 \alias{G_obh}
-\title{Title}
+\title{Beam irradiance on horizontal surface at top of Mars atmosphere}
 \usage{
 G_obh(Ls, phi = NULL, Ts = NULL, z = Z(Ls = Ls, phi = phi, Ts = Ts))
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]. Can be NULL if z is provided}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]. Can be NULL if z is provided}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 }
 \value{
-
+Beam irradiance at top of atmosphere [W/m²]
 }
 \description{
-Title
+Calculates the solar beam irradiance on a horizontal surface at the top of the Martian
+atmosphere (before atmospheric attenuation). Implements Equation 5 from Appelbaum & Flood (1990).
 }

@@ -87,4 +87,15 @@ test_that("H_i: Global daily insolation on an optimal inclined angle beta = 22 a
     verbose = FALSE)
 })
 
+test_that("H_i: gamma_c validation", {
+  # Test invalid gamma_c values (out of -180 to 180 range)
+  expect_error(
+    H_i(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, beta = 25, gamma_c = 181)
+  )
+
+  expect_error(
+    H_i(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, beta = 25, gamma_c = -181)
+  )
+})
+
 

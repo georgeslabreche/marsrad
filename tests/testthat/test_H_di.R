@@ -75,3 +75,14 @@ test_that("H_di: Diffuse daily insolation on an inclined surface for beta = phi 
 #     beta_equals_phi = FALSE,
 #     verbose = FALSE)
 # })
+
+test_that("H_di: gamma_c validation", {
+  # Test invalid gamma_c values (out of -180 to 180 range)
+  expect_error(
+    H_di(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, beta = 25, gamma_c = 181)
+  )
+
+  expect_error(
+    H_di(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, beta = 25, gamma_c = -181)
+  )
+})

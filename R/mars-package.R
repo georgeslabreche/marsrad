@@ -1,0 +1,87 @@
+#' mars: Mars Solar Radiation
+#'
+#' @description
+#' A set of functions to calculate solar irradiance and insolation on Mars horizontal
+#' and inclined surfaces. Based on NASA Technical Memoranda 102299, 103623, 105216,
+#' 106321, and 106700, i.e. the canonical Mars solar radiation papers.
+#'
+#' @details
+#' The package provides three types of solar radiation calculations:
+#' \itemize{
+#'   \item Instantaneous irradiance (G_* functions) — Power per unit area at a specific moment
+#'   \item Daily insolation (H_* functions) — Energy per unit area over one Martian sol
+#'   \item Period insolation (I_* functions) — Energy per unit area over multiple sols
+#' }
+#'
+#' All calculations support both horizontal and inclined surfaces. The package includes
+#' functions for optimal tilt angle calculation, sunrise/sunset times, and atmospheric
+#' optical depth modeling.
+#'
+#' @section Package Information:
+#' \describe{
+#'   \item{Version}{1.0.0}
+#'   \item{License}{GPL-3}
+#'   \item{Author}{\href{https://georges.fyi}{Georges Labrèche}}
+#'   \item{Affiliation}{\href{https://tanagraspace.com}{Tanagra Space}}
+#'   \item{Depends}{R (>= 2.10)}
+#' }
+#'
+#' @section Citation:
+#' If you use this package in your research or publication, please cite the paper it was developed for:
+#'
+#' Labrèche, G., & Cordes, F. (2020). Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism.
+#' \emph{15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)}.
+#' \url{https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf}
+#'
+#' @section Links:
+#' \describe{
+#'   \item{Project's GitHub repository}{\url{https://github.com/georgeslabreche/mars}}
+#'   \item{Author's LinkedIn}{\url{https://www.linkedin.com/in/georgeslabreche/}}
+#'   \item{Author's website}{\url{https://georges.fyi}}
+#' }
+#'
+#' @examples
+#' # Calculate horizontal irradiance at Viking 1 landing site on Ls 90 (northern summer solstice)
+#' G_h(Ls = 90, phi = 22.48, longitude = -48, Ts = 12, tau = 0.5)
+#'
+#' # Find optimal panel tilt angle for the same location and season
+#' optimal_angle(Ls = 90, phi = 22.48)
+#'
+#' # Calculate daily insolation on a horizontal surface
+#' H_h(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5)
+#'
+#' # Calculate insolation over a 24-hour period on an inclined surface
+#' I_i(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, Ts_start = 0, Ts_end = 24, beta = 25, gamma_c = 0)
+#'
+#' @references
+#' Appelbaum, J., & Flood, D. J. (1989). Solar Radiation on Mars.
+#' NASA Technical Memorandum 102299.
+#' \url{https://ntrs.nasa.gov/citations/19890018252}
+#'
+#' Appelbaum, J., & Flood, D. J. (1990). Solar radiation on Mars: Update 1990.
+#' NASA Technical Memorandum 103623.
+#' \url{https://ntrs.nasa.gov/citations/19910005804}
+#'
+#' Appelbaum, J., & Flood, D. J. (1991). Solar radiation on Mars: Update 1991.
+#' NASA Technical Memorandum 105216.
+#' \url{https://ntrs.nasa.gov/citations/19910023732}
+#'
+#' Appelbaum, J., Sherman, I., & Landis, G. A. (1993).
+#' Solar radiation on Mars: Stationary photovoltaic array.
+#' NASA Technical Memorandum 106321.
+#' \url{https://ntrs.nasa.gov/citations/19940010257}
+#'
+#' Appelbaum, J., Flood, D. J., & Norambuena, M. (1994).
+#' Solar radiation on Mars: Tracking photovoltaic array.
+#' NASA Technical Memorandum 106700.
+#' \url{https://ntrs.nasa.gov/citations/19950004977}
+#'
+#' @seealso
+#' Labrèche, G. (2020). Exploiting the SherpaTT Rover Active Suspension System to Enable
+#' Optimal Solar Array Inclination and Orientation for Long Traverses in a Martian Environment.
+#' \emph{Master's Thesis, Luleå University of Technology}.
+#' \url{https://www.diva-portal.org/smash/record.jsf?pid=diva2:1413245}
+#' 
+"_PACKAGE"
+#' @importFrom stats integrate
+NULL

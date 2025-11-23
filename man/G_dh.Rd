@@ -2,7 +2,7 @@
 % Please edit documentation in R/G_dh.R
 \name{G_dh}
 \alias{G_dh}
-\title{Title}
+\title{Diffuse irradiance on Mars horizontal surface}
 \usage{
 G_dh(
   Ls,
@@ -15,23 +15,25 @@ G_dh(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]. Can be NULL for daily calculations}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 }
 \value{
-
+Diffuse irradiance on horizontal surface [W/m²]
 }
 \description{
-Title
+Calculates the diffuse solar irradiance (scattered by atmospheric dust) incident on a
+horizontal surface on Mars. Computed as the difference between global and direct beam
+irradiance. Implements Equation 16 from Appelbaum & Flood (1990).
 }

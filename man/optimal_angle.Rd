@@ -2,23 +2,22 @@
 % Please edit documentation in R/optimal_angle.R
 \name{optimal_angle}
 \alias{optimal_angle}
-\title{Optimal beta angle of the surface for clear and cloudy skies.}
+\title{Optimal tilt angle for maximum daily insolation}
 \usage{
 optimal_angle(Ls, phi, unit = 1)
 }
 \arguments{
-\item{Ls}{areocentric longitude.}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{planetary latitude.}
+\item{phi}{Planetary latitude [deg]}
 
-\item{unit}{unit of the calculated beta angle, 1 for radians or 2 for degrees.}
+\item{unit}{Output unit: 1 for radians, 2 for degrees (default: 1)}
 }
 \value{
-
+Optimal tilt angle [rad] or [deg] depending on unit parameter
 }
 \description{
-Taken from Equations 40 and 43 in Appelbaum 1993.
-Warning: 
-- Equation 40 in Appelbaum 1993 is wrong. Took Equation 40 in Appelbaum 1995 instead.
-- Equation 40 in Appelbaum 1995 returns negative values. Changed the equation to include abs().
+Calculates the optimal surface tilt angle (beta) that maximizes daily solar energy collection
+for a given location and season on Mars. The surface is assumed to face the equator.
+Based on Equations 40 and 43 from Appelbaum (1993).
 }

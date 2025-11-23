@@ -2,7 +2,7 @@
 % Please edit documentation in R/I_di.R
 \name{I_di}
 \alias{I_di}
-\title{Title}
+\title{Diffuse insolation on Mars inclined surface over time period}
 \usage{
 I_di(
   Ls,
@@ -17,27 +17,28 @@ I_di(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{Ts_start}{}
+\item{Ts_start}{Start of integration period [h]}
 
-\item{Ts_end}{}
+\item{Ts_end}{End of integration period [h]}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)}
 }
 \value{
-
+Diffuse insolation on inclined surface over specified time period [Wh/m²]
 }
 \description{
-Title
+Calculates the diffuse solar energy (scattered by atmospheric dust) received on an inclined
+surface between specified start and end times. Obtained by integrating diffuse irradiance over the time period.
 }

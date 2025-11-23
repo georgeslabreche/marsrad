@@ -2,3 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
+
+.DS_Store
+
+# Generated documentation
+docs/mars-manual.pdf

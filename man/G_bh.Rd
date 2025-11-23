@@ -2,28 +2,26 @@
 % Please edit documentation in R/G_bh.R
 \name{G_bh}
 \alias{G_bh}
-\title{Title}
+\title{Direct beam irradiance on Mars horizontal surface}
 \usage{
 G_bh(Ls, phi, Ts, z = Z(Ls = Ls, phi = phi, Ts = Ts), tau)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{Ts}{}
+\item{Ts}{Solar time [h]}
 
-\item{z}{}
+\item{z}{Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts}
 
-\item{tau}{}
-
-\item{longitude}{}
-
-\item{al}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 }
 \value{
-
+Direct beam irradiance on horizontal surface [W/m²]
 }
 \description{
-Title
+Calculates the direct beam solar irradiance incident on a horizontal surface on Mars.
+Accounts for the angle of incidence on the horizontal plane. Implements Equation 18
+from Appelbaum & Flood (1990).
 }

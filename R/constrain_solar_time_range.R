@@ -1,19 +1,21 @@
-#
-# Constrain Ts_start and Ts_end based on sunrise and sunset times.
-#FIXME: Refactor to daylight_range without Ts_start and Ts_end.
+# FIXME: Refactor to daylight_range without Ts_start and Ts_end.
 
 
-#' Title
+#' Constrain solar time range to daylight hours
 #'
-#' @param Ls 
-#' @param phi 
-#' @param Ts_start 
-#' @param Ts_end 
-#' @param beta 
-#' @param gamma_c 
+#' Adjusts the specified time range to only include periods when the sun is above the horizon.
+#' Accounts for sunrise/sunset times and polar day/night conditions. Returns NULL if no sunlight
+#' occurs during the specified period.
 #'
-#' @return
-#' @export
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param Ts_start Start time to constrain [h]
+#' @param Ts_end End time to constrain [h]
+#' @param beta Surface tilt/slope angle from horizontal [deg]. Optional, for inclined surfaces
+#' @param gamma_c Surface azimuth angle [deg]. Optional, for inclined surfaces
+#'
+#' @return List with Ts_start and Ts_end constrained to daylight hours, or NULL if no daylight
+#' @noRd
 constrain_solar_time_range = function(Ls, phi, Ts_start, Ts_end, beta=NULL, gamma_c=NULL){
   
   if(Ts_start >= Ts_end){

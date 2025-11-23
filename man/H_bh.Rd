@@ -2,20 +2,21 @@
 % Please edit documentation in R/H_bh.R
 \name{H_bh}
 \alias{H_bh}
-\title{Title}
+\title{Beam daily insolation on Mars horizontal surface}
 \usage{
 H_bh(Ls, phi, tau)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 }
 \value{
-
+Beam daily insolation [Wh/m²-day]
 }
 \description{
-Title
+Calculates the direct beam solar energy received over a full Martian day on a horizontal surface.
+Obtained by integrating beam irradiance from sunrise to sunset.
 }

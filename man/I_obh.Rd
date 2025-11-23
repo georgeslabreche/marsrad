@@ -2,22 +2,24 @@
 % Please edit documentation in R/I_obh.R
 \name{I_obh}
 \alias{I_obh}
-\title{Title}
+\title{Beam insolation at top of Mars atmosphere over time period}
 \usage{
 I_obh(Ls, phi, Ts_start, Ts_end)
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{Ts_start}{}
+\item{Ts_start}{Start of integration period [h]}
 
-\item{Ts_end}{}
+\item{Ts_end}{End of integration period [h]}
 }
 \value{
-
+Beam insolation at top of atmosphere over specified time period [Wh/m²]
 }
 \description{
-Title
+Calculates the solar beam energy on a horizontal surface at the top of the Martian atmosphere
+(before atmospheric attenuation) between specified start and end times. Implements Equation 11
+from Appelbaum & Flood (1990).
 }

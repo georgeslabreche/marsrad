@@ -2,7 +2,7 @@
 % Please edit documentation in R/H_dh.R
 \name{H_dh}
 \alias{H_dh}
-\title{Title}
+\title{Diffuse daily insolation on Mars horizontal surface}
 \usage{
 H_dh(
   Ls,
@@ -13,17 +13,20 @@ H_dh(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{tau}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{al}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
+
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 }
 \value{
-
+Diffuse daily insolation [Wh/m²-day]
 }
 \description{
-Title
+Calculates the diffuse solar energy (scattered by atmospheric dust) received over a full
+Martian day on a horizontal surface. Obtained by integrating diffuse irradiance from sunrise to sunset.
 }

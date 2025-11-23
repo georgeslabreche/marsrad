@@ -2,7 +2,7 @@
 % Please edit documentation in R/H_h.R
 \name{H_h}
 \alias{H_h}
-\title{Title}
+\title{Global daily insolation on Mars horizontal surface}
 \usage{
 H_h(
   Ls,
@@ -13,17 +13,20 @@ H_h(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{tau}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{al}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
+
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 }
 \value{
-
+Global daily insolation [Wh/m²-day]
 }
 \description{
-Title
+Calculates the total solar energy received over a full Martian day on a horizontal surface.
+Obtained by integrating global hourly insolation from sunrise to sunset.
 }

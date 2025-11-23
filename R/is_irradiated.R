@@ -1,23 +1,39 @@
 Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)
-
 # TODO: Write a test script.
-#' Check if there is solar irradiance at the given location and moment.
+
+#' Check if surface is receiving solar irradiance
 #'
-#' @param Ls 
-#' @param phi 
-#' @param Ts 
-#' @param z 
-#' @param beta 
-#' @param gamma_c
+#' Determines whether a surface at a given location and time is receiving solar irradiance.
+#' Accounts for polar night/day conditions, sunrise/sunset times, and sun position below horizon.
 #'
-#' @return
+#' @param Ls Areocentric longitude [deg]
+#' @param phi Planetary latitude [deg]
+#' @param Ts Solar time [h]
+#' @param z Sun zenith angle [deg]. If not provided, calculated from Ls, phi, and Ts
+#' @param beta Surface tilt/slope angle from horizontal [deg]. Optional, for inclined surfaces
+#' @param gamma_c Surface azimuth angle [deg]. Optional, for inclined surfaces
+#'
+#' @return TRUE if surface is receiving irradiance, FALSE otherwise
 #' @export
 is_irradiated = function(Ls, phi, Ts, z=Z(Ls, Ts, phi), beta=NULL, gamma_c=NULL){
 
   if(isTRUE(identical(z, numeric(0)))){
     stop("One of the following is required: i. Sun zenith angle z [deg] or ii. Both latitude phi [deg] and solar time Ts [h].")
-  
-  # FIXME: Is this needed?  
+
+  # Handle vector inputs early (e.g., from integration calculations)
+  # Skip validation for vectors and check zenith angle at the end
+  }else if(length(z) > 1){
+    # Vector input - check if any values indicate no irradiation (z >= 90)
+    # Return vector of TRUE/FALSE or single TRUE if all are valid
+    if(any(z >= 90)){
+      return(ifelse(z >= 90, FALSE, TRUE))
+    }else{
+      return(TRUE)
+    }
+
+  # FIXME: This validation check warns users when they provide both z and phi/Ts with inconsistent values.
+  # It may not be strictly necessary since the function uses z when provided, but it helps catch user errors.
+  # Consider removing if it causes issues or is deemed unnecessary for the API.
   }else if(!is.null(phi) && !is.null(Ts) && z != Z(Ls=Ls, Ts=Ts, phi=phi)){
     if(isTRUE(show_net_flux_function_warnings())){
       message("Sun zenith angle z [deg] has been provided, ignoring given latitude phi [deg] and solar time Ts [h].")
@@ -50,15 +66,11 @@ is_irradiated = function(Ls, phi, Ts, z=Z(Ls, Ts, phi), beta=NULL, gamma_c=NULL)
       }
     }
   }
-  
-  # FIXME: Use ifelse function to support scalar?
-  # Only do this check if a z scalar is given rather than a vector (e.g. from integrating to calculate daily insolation)
-  if(length(z) == 1){
-    if(z >= 90){
-      return(FALSE)
-    }else{
-      return(TRUE)
-    }
+
+
+  # Scalar case: Check if sun is below horizon (z >= 90 degrees)
+  if(z >= 90){
+    return(FALSE)
   }else{
     return(TRUE)
   }

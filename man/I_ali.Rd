@@ -2,7 +2,7 @@
 % Please edit documentation in R/I_ali.R
 \name{I_ali}
 \alias{I_ali}
-\title{Title}
+\title{Albedo-reflected insolation on Mars inclined surface over time period}
 \usage{
 I_ali(
   Ls,
@@ -17,27 +17,28 @@ I_ali(
 )
 }
 \arguments{
-\item{Ls}{}
+\item{Ls}{Areocentric longitude [deg]}
 
-\item{phi}{}
+\item{phi}{Planetary latitude [deg]}
 
-\item{longitude}{}
+\item{longitude}{Planetary longitude [deg]}
 
-\item{tau}{}
+\item{tau}{Atmospheric optical depth (dimensionless)}
 
-\item{Ts_start}{}
+\item{Ts_start}{Start of integration period [h]}
 
-\item{Ts_end}{}
+\item{Ts_end}{End of integration period [h]}
 
-\item{al}{}
+\item{al}{Surface albedo (dimensionless, 0-1). If not provided, calculated from latitude, longitude, and tau}
 
-\item{beta}{}
+\item{beta}{Surface tilt/slope angle from horizontal [deg]}
 
-\item{gamma_c}{}
+\item{gamma_c}{Surface azimuth angle [deg]. Zero facing equator, east negative, west positive (-180 to +180)}
 }
 \value{
-
+Albedo-reflected insolation on inclined surface over specified time period [Wh/m²]
 }
 \description{
-Title
+Calculates the ground-reflected solar energy received on an inclined surface between specified
+start and end times. Obtained by integrating albedo-reflected irradiance over the time period.
 }

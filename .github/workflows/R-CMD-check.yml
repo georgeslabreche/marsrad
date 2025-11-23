@@ -1,0 +1,86 @@
+name: R-CMD-check
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  R-CMD-check:
+    runs-on: ubuntu-latest
+    env:
+      NET_FLUX_FUNCTION_SHOW_WARNINGS: FALSE
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck, any::covr
+          needs: check
+
+      - name: Check package
+        uses: r-lib/actions/check-r-package@v2
+
+      - name: Test coverage
+        run: |
+          options(crayon.enabled = TRUE)
+          library(covr)
+
+          # Calculate coverage
+          coverage <- package_coverage()
+          print(coverage)
+          percent_coverage <- percent_coverage(coverage)
+
+          # Print to console
+          cat(sprintf("\nOverall coverage: %.2f%%\n", percent_coverage))
+
+          # Add to GitHub Actions job summary
+          summary_file <- Sys.getenv("GITHUB_STEP_SUMMARY")
+          cat("## Test Coverage Report\n\n", file = summary_file, append = TRUE)
+          cat(sprintf("**Overall Coverage: %.2f%%**\n\n", percent_coverage), file = summary_file, append = TRUE)
+          cat("### Coverage by File\n\n", file = summary_file, append = TRUE)
+          cat("| File | Coverage |\n", file = summary_file, append = TRUE)
+          cat("|------|----------|\n", file = summary_file, append = TRUE)
+
+          # Get per-file coverage by parsing print output (it uses messages, not stdout)
+          cov_output <- capture.output(print(coverage), type = "message")
+          # Strip ANSI color codes (e.g., \033[31m for red, \033[32m for green)
+          # \033 is the ESC character (ASCII 27) that starts ANSI escape sequences
+          cov_output <- gsub("\033\\[[0-9;]*m", "", cov_output)
+          file_lines <- grep("R/.*\\.R:", cov_output, value = TRUE)
+
+          for (line in file_lines) {
+            # Split on first colon only
+            match <- regexpr(":", line)
+            if (match > 0) {
+              file_name <- trimws(substring(line, 1, match - 1))
+              file_percent <- trimws(substring(line, match + 1))
+              cat(sprintf("| %s | %s |\n", file_name, file_percent), file = summary_file, append = TRUE)
+            }
+          }
+
+          # Generate HTML report
+          report_dir <- file.path(getwd(), "coverage-report")
+          dir.create(report_dir, showWarnings = FALSE)
+          covr::report(coverage, file = file.path(report_dir, "coverage.html"), browse = FALSE)
+          cat(sprintf("\nHTML coverage report generated in %s\n", report_dir))
+        shell: Rscript {0}
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage-report/
+
+      - name: Show test failures
+        if: failure()
+        run: |
+          find . -name 'testthat.Rout.fail' -exec cat '{}' \; || true
+        shell: bash
