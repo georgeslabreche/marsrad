@@ -21,6 +21,7 @@
 #' \describe{
 #'   \item{Version}{1.0.0}
 #'   \item{License}{GPL-3}
+#'   \item{Website}{\url{https://georgeslabreche.github.io/marsrad/}}
 #'   \item{Author}{\href{https://georges.fyi}{Georges Labrèche}}
 #'   \item{Affiliation}{\href{https://tanagraspace.com}{Tanagra Space}}
 #'   \item{Depends}{R (>= 2.10)}
@@ -35,7 +36,8 @@
 #'
 #' @section Links:
 #' \describe{
-#'   \item{Project's GitHub repository}{\url{https://github.com/georgeslabreche/marsrad}}
+#'   \Item{Package website}{\url{https://georgeslabreche.github.io/marsrad/}}
+#'   \item{Package's GitHub repository}{\url{https://github.com/georgeslabreche/marsrad}}
 #'   \item{Author's LinkedIn}{\url{https://www.linkedin.com/in/georgeslabreche/}}
 #'   \item{Author's website}{\url{https://georges.fyi}}
 #' }
