@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/georgeslabreche/marsrad/blob/master/inst/CITATION)
+[`inst/CITATION`](https://github.com/georgeslabreche/marsrad/blob/v1.0.0/inst/CITATION)
 
 Labrèche, G., & Cordes, F. (2020). Using a Rover's Active Suspension
 System as a 2-Axis Solar Tracker Mechanism. 15th International Symposium
