@@ -66,7 +66,7 @@ The package implements equations for:
   day/night detection
 
 For a complete list of all functions with descriptions, see
-[FUNCTIONS.md](https://github.com/georgeslabreche/marsrad/blob/master/docs/FUNCTIONS.md).
+[FUNCTIONS.md](https://github.com/georgeslabreche/marsrad/blob/master/FUNCTIONS.md).
 
 ## Parameters
 
@@ -253,23 +253,24 @@ For Apple Silicon Macs (M1/M2/M3):
 
 ``` bash
 # Build the Docker image (first time only, from repository root)
-docker build --platform linux/amd64 -t mars-docs -f Dockerfile-docs .
+docker build --platform linux/amd64 -t marsrad-manual -f Dockerfile-manual .
 
 # Generate the PDF
-docker run --rm --platform linux/amd64 -v $(pwd)/docs:/output mars-docs
+docker run --rm --platform linux/amd64 -v $(pwd):/output marsrad-manual
 ```
 
 For Intel Macs and Linux:
 
 ``` bash
 # Build the Docker image (first time only, from repository root)
-docker build -t mars-docs -f Dockerfile-docs .
+docker build -t marsrad-manual -f Dockerfile-manual .
 
 # Generate the PDF
-docker run --rm -v $(pwd)/docs:/output mars-docs
+docker run --rm -v $(pwd):/output marsrad-manual
 ```
 
-The PDF will be created at `docs/mars-manual.pdf`.
+The `marsrad-manual.pdf` PDF will be created in the repository’s root
+directory.
 
 ## References
 

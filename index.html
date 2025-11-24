@@ -107,7 +107,7 @@
 <li>
 <strong>Utility functions</strong> - sunrise/sunset, optimal angles, polar day/night detection</li>
 </ul>
-<p>For a complete list of all functions with descriptions, see <a href="https://github.com/georgeslabreche/marsrad/blob/master/docs/FUNCTIONS.md" class="external-link">FUNCTIONS.md</a>.</p>
+<p>For a complete list of all functions with descriptions, see <a href="https://github.com/georgeslabreche/marsrad/blob/master/FUNCTIONS.md" class="external-link">FUNCTIONS.md</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="parameters">Parameters<a class="anchor" aria-label="anchor" href="#parameters"></a>
@@ -132,7 +132,7 @@
 <h3 id="basic-usage">Basic Usage<a class="anchor" aria-label="anchor" href="#basic-usage"></a>
 </h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://georges.fyi/marsrad" class="external-link">marsrad</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://georges.fyi/marsrad/" class="external-link">marsrad</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculate global irradiance on a horizontal surface</span></span>
 <span><span class="co"># Example: Mars surface at Viking Lander 1 site during northern summer</span></span>
@@ -284,17 +284,17 @@
 <p>The package reference manual is a comprehensive PDF containing documentation for all exported functions.</p>
 <p>For Apple Silicon Macs (M1/M2/M3):</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Build the Docker image (first time only, from repository root)</span></span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">--platform</span> linux/amd64 <span class="at">-t</span> mars-docs <span class="at">-f</span> Dockerfile-docs .</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">--platform</span> linux/amd64 <span class="at">-t</span> marsrad-manual <span class="at">-f</span> Dockerfile-manual .</span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co"># Generate the PDF</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">--platform</span> linux/amd64 <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>/docs:/output mars-docs</span></code></pre></div>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">--platform</span> linux/amd64 <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/output marsrad-manual</span></code></pre></div>
 <p>For Intel Macs and Linux:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># Build the Docker image (first time only, from repository root)</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> mars-docs <span class="at">-f</span> Dockerfile-docs .</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-t</span> marsrad-manual <span class="at">-f</span> Dockerfile-manual .</span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co"># Generate the PDF</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>/docs:/output mars-docs</span></code></pre></div>
-<p>The PDF will be created at <code>docs/mars-manual.pdf</code>.</p>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-v</span> <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/output marsrad-manual</span></code></pre></div>
+<p>The <code>marsrad-manual.pdf</code> PDF will be created in the repository’s root directory.</p>
 </div>
 </div>
 </div>
