@@ -19,8 +19,8 @@ expected_data = list(
     "insolation" =
       list(
         "horizontal" = read.csv("data/daily_insolation_on_horizontal_surface_at_vl1_table_v_update_1990.csv"),
-        "beta_equals_phi" = read.csv("data/daily_insolation_on_an_inclined_surface_for_beta_equals_phi_at_vl1_table_ii_1993.csv"),
-        "beta_optimal" = read.csv("data/daily_insolation_on_optimal_inclined_angle_beta_at_vl1_table_iii_1993.csv")
+        "beta_equals_phi" = read.csv("data/insolation_inclined_beta_eq_phi_vl1_tbl_ii_1993.csv"),
+        "beta_optimal" = read.csv("data/insolation_optimal_incl_angle_vl1_tbl_iii_1993.csv")
       )
   ),
   "VL2" = list(
@@ -28,8 +28,8 @@ expected_data = list(
     "insolation" =
       list(
         "horizontal" = read.csv("data/daily_insolation_on_horizontal_surface_at_vl2_table_v_update_1990.csv"),
-        "beta_equals_phi" = read.csv("data/daily_insolation_on_an_inclined_surface_for_beta_equals_phi_at_vl2_table_ii_1993.csv"),
-        "beta_optimal" = read.csv("data/daily_insolation_on_optimal_inclined_angle_beta_at_vl2_table_iii_1993.csv")
+        "beta_equals_phi" = read.csv("data/insolation_inclined_beta_eq_phi_vl2_tbl_ii_1993.csv"),
+        "beta_optimal" = read.csv("data/insolation_optimal_incl_angle_vl2_tbl_iii_1993.csv")
       )
   )
 )

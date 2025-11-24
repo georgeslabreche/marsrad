@@ -1,0 +1,84 @@
+url: https://georgeslabreche.github.io/marsrad/
+destination: _site
+template:
+  bootstrap: 5
+  bootswatch: flatly
+
+home:
+  title: "marsrad: Mars Solar Radiation"
+  description: Calculate solar irradiance and insolation on Mars
+
+reference:
+  - title: "Package Documentation"
+    contents:
+      - marsrad-package
+
+  - title: "Instantaneous Irradiance (G_* functions)"
+    desc: "Power per unit area at a specific moment"
+    contents:
+      - G_h
+      - G_i
+      - G_ob
+      - G_obh
+      - G_b
+      - G_bh
+      - G_bi
+      - G_dh
+      - G_di
+      - G_ali
+
+  - title: "Daily Insolation (H_* functions)"
+    desc: "Energy per unit area over one Martian sol"
+    contents:
+      - H_h
+      - H_i
+      - H_obh
+      - H_bh
+      - H_bi
+      - H_dh
+      - H_di
+      - H_ali
+
+  - title: "Period Insolation (I_* functions)"
+    desc: "Energy per unit area over multiple sols"
+    contents:
+      - I_h
+      - I_i
+      - I_obh
+      - I_bh
+      - I_bi
+      - I_dh
+      - I_di
+      - I_ali
+
+  - title: "Solar Geometry"
+    desc: "Sun position and angles"
+    contents:
+      - declination
+      - Z
+      - sunrise
+      - sunset
+      - T_d
+
+  - title: "Day/Night Conditions"
+    desc: "Check polar day/night conditions"
+    contents:
+      - is_irradiated
+      - is_polar_day
+      - is_polar_night
+
+  - title: "Atmospheric Effects"
+    desc: "Optical depth modeling"
+    contents:
+      - optical_depth
+
+  - title: "Optimization"
+    desc: "Calculate optimal angles"
+    contents:
+      - optimal_angle
+
+  - title: "Helper Functions"
+    contents:
+      - albedo
+      - f
+

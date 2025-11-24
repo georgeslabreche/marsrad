@@ -1,6 +1,6 @@
-[![R-CMD-check](https://github.com/georgeslabreche/mars/workflows/R-CMD-check/badge.svg)](https://github.com/georgeslabreche/mars/actions)
+[![R-CMD-check](https://github.com/georgeslabreche/marsrad/workflows/R-CMD-check/badge.svg)](https://github.com/georgeslabreche/marsrad/actions)
 
-# Mars Solar Radiation
+# marsrad: Mars Solar Radiation
 
 ## Overview
 
@@ -73,13 +73,13 @@ Install the package from GitHub using devtools:
 install.packages("devtools")
 
 # Install the mars package
-devtools::install_github("georgeslabreche/mars")
+devtools::install_github("georgeslabreche/marsrad")
 ```
 
 ### Basic Usage
 
 ```r
-library(mars)
+library(marsrad)
 
 # Calculate global irradiance on a horizontal surface
 # Example: Mars surface at Viking Lander 1 site during northern summer
