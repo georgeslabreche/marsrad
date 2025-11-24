@@ -1,0 +1,52 @@
+# Normalized net flux function
+
+Calculates the normalized net solar flux on the Martian surface
+accounting for multiple wavelength and multiple scattering in the
+atmosphere. Based on Pollack's calculations presented in Appelbaum &
+Flood (1990). Can use polynomial expression or lookup tables.
+
+## Usage
+
+``` r
+f(z, tau, al = 0.1)
+```
+
+## Arguments
+
+- z:
+
+  Sun zenith angle \[deg\]
+
+- tau:
+
+  Atmospheric optical depth (dimensionless)
+
+- al:
+
+  Surface albedo (dimensionless, ranges from 0.1 to 0.4)
+
+## Value
+
+Normalized net flux (dimensionless)
+
+## Environment Variables
+
+The function behavior can be configured via environment variables:
+
+**NET_FLUX_FUNCTION_TYPE**: Controls which implementation to use:
+
+- `"polynomial"` (default) - Analytical polynomial expression with ~0.7%
+  mean error. Maximum error ~7% at zenith angles 80-85° and tau \> 5.
+
+- `"lookup_v1"` - Lookup table from NASA TM-102299. Albedo fixed at 0.1.
+
+- `"lookup_v2"` - Lookup table from NASA TM-103623. Supports albedo 0.1
+  and 0.4.
+
+Set with: `Sys.setenv(NET_FLUX_FUNCTION_TYPE = "polynomial")`
+
+**NET_FLUX_FUNCTION_SHOW_WARNINGS**: Controls warning display
+(TRUE/FALSE, default: TRUE). Warnings are shown when polynomial
+calculations may have notable error margin (tau \> 5 or z \>= 80°).
+
+Set with: `Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)`
