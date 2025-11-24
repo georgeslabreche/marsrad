@@ -3,7 +3,9 @@
 ^data-raw$
 ^\.github$
 ^Dockerfile-docs$
-^docs$
 ^LICENSE$
 ^\.claude$
 ^cran-comments\.md$
+^_pkgdown\.yml$
+^pkgdown$
+^_site$
