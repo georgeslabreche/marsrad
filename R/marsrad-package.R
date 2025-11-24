@@ -36,7 +36,7 @@
 #'
 #' @section Links:
 #' \describe{
-#'   \Item{Package website}{\url{https://georgeslabreche.github.io/marsrad/}}
+#'   \item{Package website}{\url{https://georgeslabreche.github.io/marsrad/}}
 #'   \item{Package's GitHub repository}{\url{https://github.com/georgeslabreche/marsrad}}
 #'   \item{Author's LinkedIn}{\url{https://www.linkedin.com/in/georgeslabreche/}}
 #'   \item{Author's website}{\url{https://georges.fyi}}
