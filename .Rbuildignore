@@ -9,3 +9,4 @@
 ^_pkgdown\.yml$
 ^pkgdown$
 ^_site$
+^CRAN-SUBMISSION$
