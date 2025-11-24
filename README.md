@@ -235,7 +235,7 @@ docker build -t marsrad-manual -f Dockerfile-manual .
 docker run --rm -v $(pwd):/output marsrad-manual
 ```
 
-The PDF will be created at `marsrad-manual.pdf`.
+The `marsrad-manual.pdf` PDF will be created in the repository's root directory.
 
 ## References
 
