@@ -27,7 +27,7 @@ optical depth modeling.
 \describe{
   \item{Version}{1.0.0}
   \item{License}{GPL-3}
-  \item{Website}{\url{https://georgeslabreche.github.io/marsrad/}}
+  \item{Website}{\url{https://georges.fyi/marsrad}}
   \item{Author}{\href{https://georges.fyi}{Georges Labrèche}}
   \item{Affiliation}{\href{https://tanagraspace.com}{Tanagra Space}}
   \item{Depends}{R (>= 2.10)}
@@ -46,10 +46,10 @@ Labrèche, G., & Cordes, F. (2020). Using a Rover's Active Suspension System as 
 \section{Links}{
 
 \describe{
-  \item{Package website}{\url{https://georgeslabreche.github.io/marsrad/}}
-  \item{Package's GitHub repository}{\url{https://github.com/georgeslabreche/marsrad}}
-  \item{Author's LinkedIn}{\url{https://www.linkedin.com/in/georgeslabreche/}}
-  \item{Author's website}{\url{https://georges.fyi}}
+  \item{Package website}{\url{https://georges.fyi/marsrad}}
+  \item{Package GitHub repository}{\url{https://github.com/georgeslabreche/marsrad}}
+  \item{Author LinkedIn}{\url{https://www.linkedin.com/in/georgeslabreche/}}
+  \item{Author website}{\url{https://georges.fyi}}
 }
 }
 
