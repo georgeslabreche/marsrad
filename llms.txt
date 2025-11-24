@@ -66,7 +66,7 @@ The package implements equations for:
   day/night detection
 
 For a complete list of all functions with descriptions, see
-[FUNCTIONS.md](https://georgeslabreche.github.io/marsrad/docs/FUNCTIONS.md).
+[FUNCTIONS.md](https://github.com/georgeslabreche/marsrad/blob/master/docs/FUNCTIONS.md).
 
 ## Parameters
 
