@@ -1,8 +1,13 @@
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 2 notes
 
 * This is a new submission.
+
+* NOTE: checking CRAN incoming feasibility
+  - Maintainer: 'Georges Labrèche <georges@tanagraspace.com>'
+  - New submission
+  - This is expected for a first-time CRAN submission.
 
 * NOTE: checking top-level files
   - Files 'README.md' or 'NEWS.md' cannot be checked without 'pandoc' being installed.
