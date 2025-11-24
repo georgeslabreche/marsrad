@@ -6,3 +6,4 @@
 ^docs$
 ^LICENSE$
 ^\.claude$
+^cran-comments\.md$
