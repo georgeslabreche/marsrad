@@ -1,4 +1,4 @@
-#' mars: Mars Solar Radiation
+#' marsrad: Mars Solar Radiation
 #'
 #' @description
 #' A set of functions to calculate solar irradiance and insolation on Mars horizontal
@@ -35,7 +35,7 @@
 #'
 #' @section Links:
 #' \describe{
-#'   \item{Project's GitHub repository}{\url{https://github.com/georgeslabreche/mars}}
+#'   \item{Project's GitHub repository}{\url{https://github.com/georgeslabreche/marsrad}}
 #'   \item{Author's LinkedIn}{\url{https://www.linkedin.com/in/georgeslabreche/}}
 #'   \item{Author's website}{\url{https://georges.fyi}}
 #' }
@@ -51,7 +51,8 @@
 #' H_h(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5)
 #'
 #' # Calculate insolation over a 24-hour period on an inclined surface
-#' I_i(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, Ts_start = 0, Ts_end = 24, beta = 25, gamma_c = 0)
+#' I_i(Ls = 90, phi = 22.48, longitude = -48, tau = 0.5, Ts_start = 0,
+#'     Ts_end = 24, beta = 25, gamma_c = 0)
 #'
 #' @references
 #' Appelbaum, J., & Flood, D. J. (1989). Solar Radiation on Mars.
