@@ -4,11 +4,11 @@
 #
 # Usage (from repository root):
 #   # On Apple Silicon Macs:
-#   docker build --platform linux/amd64 -t marsrad-manual -f Dockerfile-docs .
+#   docker build --platform linux/amd64 -t marsrad-manual -f Dockerfile-manual .
 #   docker run --rm --platform linux/amd64 -v $(pwd):/output marsrad-manual
 #
 #   # On Intel Macs/Linux:
-#   docker build -t marsrad-manual -f Dockerfile-docs .
+#   docker build -t marsrad-manual -f Dockerfile-manual .
 #   docker run --rm -v $(pwd):/output marsrad-manual
 #
 # The generated PDF will be written to marsrad-manual.pdf
