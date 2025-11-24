@@ -10,3 +10,4 @@
 ^pkgdown$
 ^_site$
 ^CRAN-SUBMISSION$
+^FUNCTIONS\.md$

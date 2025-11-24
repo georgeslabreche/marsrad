@@ -1,6 +1,6 @@
-# Mars Package Functions Reference
+# marsrad Package Functions Reference
 
-This document provides a quick reference for all exported functions in the mars package.
+This document provides a quick reference for all exported functions in the marsrad package.
 
 ## Function Summary
 
