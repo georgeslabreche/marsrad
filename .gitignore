@@ -6,5 +6,5 @@
 .DS_Store
 
 # Generated documentation
-docs/mars-manual.pdf
+marsrad-manual.pdf
 _site

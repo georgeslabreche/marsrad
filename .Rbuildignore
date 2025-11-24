@@ -2,10 +2,12 @@
 ^\.Rproj\.user$
 ^data-raw$
 ^\.github$
-^Dockerfile-docs$
+^Dockerfile-manual$
 ^LICENSE$
 ^\.claude$
 ^cran-comments\.md$
 ^_pkgdown\.yml$
 ^pkgdown$
 ^_site$
+^CRAN-SUBMISSION$
+^FUNCTIONS\.md$
