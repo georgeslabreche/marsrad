@@ -8,15 +8,19 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/georgeslabreche/marsrad/blob/master/DESCRIPTION)
+[`inst/CITATION`](https://github.com/georgeslabreche/marsrad/blob/master/inst/CITATION)
 
-Labrèche G (2025). *marsrad: Mars Solar Radiation*. R package version
-1.0.0, <https://georgeslabreche.github.io/marsrad/>.
+Labrèche, G., & Cordes, F. (2020). Using a Rover's Active Suspension
+System as a 2-Axis Solar Tracker Mechanism. 15th International Symposium
+on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS
+'20).
+https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf
 
-    @Manual{,
-      title = {marsrad: Mars Solar Radiation},
-      author = {Georges Labrèche},
-      year = {2025},
-      note = {R package version 1.0.0},
-      url = {https://georgeslabreche.github.io/marsrad/},
+    @InProceedings{,
+      title = {Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism},
+      author = {Georges Labrèche and Florian Cordes},
+      booktitle = {15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)},
+      month = {October},
+      year = {2020},
+      url = {https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf},
     }
