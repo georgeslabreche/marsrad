@@ -24,9 +24,9 @@ Automation in Space (i-SAIRAS ’20)*, October 2020.
 ### BibTeX
 
 ``` bibtex
-@inproceedings{labreche2020rover,
+@inproceedings{Labreche2020_iSAIRAS20_MarsRoverSherpaTT,
   title={Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism},
-  author={Labr{\`e}che, Georges and Cordes, Florian},
+  author={Labrèche, Georges and Cordes, Florian},
   booktitle={15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)},
   month={October},
   year={2020},
