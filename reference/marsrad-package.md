@@ -34,7 +34,7 @@ sunrise/sunset times, and atmospheric optical depth modeling.
 
 - Website:
 
-  <https://georgeslabreche.github.io/marsrad/>
+  <https://georges.fyi/marsrad>
 
 - Author:
 
@@ -63,17 +63,17 @@ Symposium on Artificial Intelligence, Robotics and Automation in Space
 
 - Package website:
 
-  <https://georgeslabreche.github.io/marsrad/>
+  <https://georges.fyi/marsrad>
 
-- Package's GitHub repository:
+- Package GitHub repository:
 
   <https://github.com/georgeslabreche/marsrad>
 
-- Author's LinkedIn:
+- Author LinkedIn:
 
   <https://www.linkedin.com/in/georgeslabreche/>
 
-- Author's website:
+- Author website:
 
   <https://georges.fyi>
 
