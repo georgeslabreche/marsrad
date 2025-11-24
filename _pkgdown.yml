@@ -9,6 +9,10 @@ home:
   description: Calculate solar irradiance and insolation on Mars
 
 reference:
+  - title: "Package Documentation"
+    contents:
+      - marsrad-package
+
   - title: "Instantaneous Irradiance (G_* functions)"
     desc: "Power per unit area at a specific moment"
     contents:
