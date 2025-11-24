@@ -33,6 +33,18 @@
 #' \emph{15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)}.
 #' \url{https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf}
 #'
+#' \strong{BibTeX:}
+#' \preformatted{
+#' @InProceedings{Labreche2020_iSAIRAS20_MarsSolarArrayForSherpaTT,
+#'   author    = {Georges Labrèche and Florian Cordes},
+#'   booktitle = {15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS'20)},
+#'   title     = {Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism},
+#'   year      = {2020},
+#'   address   = {online},
+#'   month     = {oct}
+#' }
+#' }
+#'
 #' @section Links:
 #' \describe{
 #'   \item{Project's GitHub repository}{\url{https://github.com/georgeslabreche/marsrad}}
@@ -82,6 +94,18 @@
 #' Optimal Solar Array Inclination and Orientation for Long Traverses in a Martian Environment.
 #' \emph{Master's Thesis, Luleå University of Technology}.
 #' \url{https://www.diva-portal.org/smash/record.jsf?pid=diva2:1413245}
+#'
+#' \strong{BibTeX:}
+#' \preformatted{
+#' @mastersthesis{Labreche2020_MastersThesis_MarsSolarArrayForSherpaTT,
+#'   title={Exploiting the SherpaTT Rover Active Suspension System to Enable Optimal Solar Array Inclination and Orientation for Long Traverses in a Martian Environment},
+#'   author={Labrèche, Georges},
+#'   year={2020},
+#'   month={March},
+#'   school={Luleå University of Technology},
+#'   url={https://www.diva-portal.org/smash/record.jsf?pid=diva2:1413245}
+#' }
+#' }
 #' 
 "_PACKAGE"
 #' @importFrom stats integrate
