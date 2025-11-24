@@ -1,17 +1,17 @@
-# Dockerfile for generating mars package PDF documentation
+# Dockerfile for generating marsrad package PDF documentation
 #
 # Lightweight container with R and minimal TeX for building the package reference manual.
 #
 # Usage (from repository root):
 #   # On Apple Silicon Macs:
-#   docker build --platform linux/amd64 -t mars-docs -f Dockerfile-docs .
-#   docker run --rm --platform linux/amd64 -v $(pwd)/docs:/output mars-docs
+#   docker build --platform linux/amd64 -t marsrad-manual -f Dockerfile-docs .
+#   docker run --rm --platform linux/amd64 -v $(pwd):/output marsrad-manual
 #
 #   # On Intel Macs/Linux:
-#   docker build -t mars-docs -f Dockerfile-docs .
-#   docker run --rm -v $(pwd)/docs:/output mars-docs
+#   docker build -t marsrad-manual -f Dockerfile-docs .
+#   docker run --rm -v $(pwd):/output marsrad-manual
 #
-# The generated PDF will be written to docs/mars-manual.pdf
+# The generated PDF will be written to marsrad-manual.pdf
 
 FROM --platform=linux/amd64 r-base:latest
 
@@ -30,5 +30,5 @@ WORKDIR /pkg
 COPY . /pkg/
 
 # Generate the PDF documentation from man/ directory only
-CMD R CMD Rd2pdf --no-preview --title="Mars Solar Radiation Package Reference Manual" /pkg/man --output=/output/mars-manual.pdf && \
-    echo "PDF generated successfully at /output/mars-manual.pdf"
+CMD R CMD Rd2pdf --no-preview --title="marsrad: Mars Solar Radiation Package Reference Manual" /pkg/man --output=/output/marsrad-manual.pdf && \
+    echo "PDF generated successfully at /output/marsrad-manual.pdf"
