@@ -1,0 +1,16 @@
+bibentry(
+  bibtype     = "InProceedings",
+  title       = "Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism",
+  author      = c(person("Georges", "Labrèche"), person("Florian", "Cordes")),
+  booktitle   = "15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20)",
+  month       = "October",
+  year        = 2020,
+  url         = "https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf",
+  header      = "To cite marsrad in publications, please use:",
+  textVersion = paste(
+    "Labrèche, G., & Cordes, F. (2020).",
+    "Using a Rover's Active Suspension System as a 2-Axis Solar Tracker Mechanism.",
+    "15th International Symposium on Artificial Intelligence, Robotics and Automation in Space (i-SAIRAS '20).",
+    "https://www.hou.usra.edu/meetings/isairas2020fullpapers/pdf/5035.pdf"
+  )
+)
