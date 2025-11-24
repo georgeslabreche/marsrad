@@ -1,0 +1,32 @@
+name: Generate marsrad R Package Manual
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build manual image
+        run: |
+          docker build --platform linux/amd64 -t marsrad-manual -f Dockerfile-manual .
+
+      - name: Generate PDF manual
+        run: |
+          rm -f marsrad-manual.pdf
+          docker run --rm --platform linux/amd64 -v $(pwd):/output marsrad-manual
+
+      - name: Upload PDF manual
+        uses: actions/upload-artifact@v4
+        with:
+          name: marsrad-manual-pdf
+          path: marsrad-manual.pdf
+          if-no-files-found: error
