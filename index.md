@@ -71,9 +71,39 @@ For a complete list of all functions with descriptions, see
 ## Parameters
 
 Calculate and plot solar radiation on Mars as a function of the
-following parameters: - Areocentric Longitude (Ls) - Planetary Latitude
-(phi) - Solar Time (omega) - Atmospheric Opacity (tau) - Albedo (al) -
-Slope Angle (beta) - Slope Orientation (gamma)
+following parameters:
+
+- Areocentric Longitude (Ls)
+- Planetary Latitude (phi)
+- Solar Time (omega)
+- Atmospheric Opacity (tau)
+- Albedo (al)
+- Slope Angle (beta)
+- Slope Orientation (gamma)
+
+## Old School Cool
+
+The Appelbaum formulas are based on Viking Lander optical depth
+measurements from the late 1970s and early 1980s. They’re 36+ years old
+now and Mars science has moved on. More recent work includes:
+
+- [An improved model for available solar energy on Mars: Optimizing
+  solar panel orientation to assess potential spacecraft landing
+  sites](https://www.sciencedirect.com/science/article/abs/pii/S0273117723002673)
+  (Kerr et al., 2023).
+- [A model to calculate solar radiation fluxes on the Martian
+  surface](https://www.swsc-journal.org/articles/swsc/full_html/2015/01/swsc150027/swsc150027.html)
+  (Vicente-Retortillo et al., 2015).
+- [Fast and accurate estimation of solar irradiance on Martian
+  slopes](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL034956)
+  (Spiga et al., 2008).
+
+However, the Appelbaum formulas remain useful for first-order estimates,
+educational purposes, and quick trade studies. They’re well-documented,
+easy to understand, analytically tractable, and give you reasonable
+ballpark figures for solar energy budgets on Mars. Just don’t use them
+to design your actual flight hardware without consulting more recent
+atmospheric models.
 
 ## Getting Started
 
@@ -82,6 +112,7 @@ Slope Angle (beta) - Slope Orientation (gamma)
 Install the package from GitHub using devtools:
 
 ``` r
+
 # Install devtools if you haven't already
 install.packages("devtools")
 
@@ -92,6 +123,7 @@ devtools::install_github("georgeslabreche/marsrad")
 ### Basic Usage
 
 ``` r
+
 library(marsrad)
 
 # Calculate global irradiance on a horizontal surface
@@ -168,6 +200,7 @@ use. Affects all radiation calculations.
 **Usage:**
 
 ``` r
+
 # Use polynomial implementation (default)
 Sys.setenv(NET_FLUX_FUNCTION_TYPE = "polynomial")
 
@@ -193,6 +226,7 @@ Warnings are shown when:
 **Usage:**
 
 ``` r
+
 # Show warnings (default)
 Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = TRUE)
 
@@ -207,6 +241,7 @@ Sys.setenv(NET_FLUX_FUNCTION_SHOW_WARNINGS = FALSE)
 To run the package tests during development:
 
 ``` r
+
 # Install devtools if you haven't already
 install.packages("devtools")
 
@@ -234,6 +269,7 @@ roxygen2 comments in the source code. To regenerate these files after
 modifying function documentation:
 
 ``` r
+
 # Install roxygen2
 install.packages("roxygen2")
 
