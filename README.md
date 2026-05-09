@@ -67,7 +67,7 @@ Calculate and plot solar radiation on Mars as a function of the following parame
 
 The Appelbaum formulas are based on Viking Lander optical depth measurements from the late 1970s and early 1980s. They're 36+ years old now and Mars science has moved on. More recent work includes:
 
-- [An improved model for available solar energy on Mars: Optimizing solar panel orientation to assess potential spacecraft landing sites](https://www.sciencedirect.com/science/article/abs/pii/S0273117723002673) (Kerr et al., 2023).
+- [An improved model for available solar energy on Mars: Optimizing solar panel orientation to assess potential spacecraft landing sites](https://doi.org/10.1016/j.asr.2023.04.004) (Kerr et al., 2023).
 - [A model to calculate solar radiation fluxes on the Martian surface](https://www.swsc-journal.org/articles/swsc/full_html/2015/01/swsc150027/swsc150027.html) (Vicente-Retortillo et al., 2015).
 - [Fast and accurate estimation of solar irradiance on Martian slopes](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2008GL034956) (Spiga et al., 2008).
 
