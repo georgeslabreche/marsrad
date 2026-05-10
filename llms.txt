@@ -89,8 +89,7 @@ now and Mars science has moved on. More recent work includes:
 
 - [An improved model for available solar energy on Mars: Optimizing
   solar panel orientation to assess potential spacecraft landing
-  sites](https://www.sciencedirect.com/science/article/abs/pii/S0273117723002673)
-  (Kerr et al., 2023).
+  sites](https://doi.org/10.1016/j.asr.2023.04.004) (Kerr et al., 2023).
 - [A model to calculate solar radiation fluxes on the Martian
   surface](https://www.swsc-journal.org/articles/swsc/full_html/2015/01/swsc150027/swsc150027.html)
   (Vicente-Retortillo et al., 2015).
